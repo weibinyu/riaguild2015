@@ -15,7 +15,7 @@ var Member = React.createClass({
 				<Link to="/">Back to list</Link>
 				<h3>{data.name}</h3>
 				<p><img src={"http://units.wesnoth.org/1.10/pics/core$images$units$"+data.icon+".png"} alt={data.icon} title={data.icon} /></p>
-				<p>{data.description}</p>
+				<p>{data.presentation}</p>
 				<h3>Contact</h3>
 				Github: {data.github}, Slack: {data.slack}
 				{data.projectrepo && (
