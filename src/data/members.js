@@ -6,5 +6,6 @@ Check users/krawaller.json for an example on what your file should look like!
 module.exports = {
 	krawaller: require("./users/krawaller.json"),
 	dagashi: require("./users/dagashi.json"),
-	OskarKlintrot: require("./users/OskarKlintrot.json")
+	OskarKlintrot: require("./users/OskarKlintrot.json"),
+	MoombaDS: require("./users/MoombaDS.json")
 };

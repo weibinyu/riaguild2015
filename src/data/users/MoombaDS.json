@@ -1,0 +1,18 @@
+{
+    "name": "Ioseff Griffith",
+    "github": "MoombaDS",
+    "projectrepo": "",
+    "projectdesc": "",
+    "slack": "ioseff",
+    "presentation": "Programmer/composer hailing from the UK with a strong love for video games.",
+    "icon": "undead$spectre",
+    "blogposts": [
+        {
+            "when": "2015-11-01 14:00",
+            "url": "https://github.com/MoombaDS/2DV607/blob/master/blog/entry01.md",
+            "title": "Introduction"
+        }
+    ],
+    "pullrequests": [
+    ]
+}
