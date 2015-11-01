@@ -1,0 +1,18 @@
+{
+    "name": "Oskar Klintrot",
+    "github": "OskarKlintrot",
+    "projectrepo": "n/a",
+    "projectdesc": "n/a",
+    "slack": "oskarklintrot",
+    "presentation": "26 year old. Have a degree in marine engineer but fell in love with programming after a lot of PLC programming in school. Prefer C#, JavaScript novice but have done at least one small project in TypeScript; [figurkoder.se](http://figurkoder.se).",
+    "icon": "monsters$seaserpent",
+    "blogposts": [
+        {
+            "when": "2015-10-31 09:00",
+            "url": "http://2dv607.oskarklintrot.se/first-post/",
+            "title": "First post"
+        }
+    ],
+    "pullrequests": [
+    ]
+}
