@@ -19,6 +19,7 @@ var Gallery = React.createClass({
         return (
             <div>
                 <Link to="/">Back to list</Link>
+                <p>These are the icons you can choose from, apart from the red ones as they are already taken!</p>
                 <div className="iconboxes">{iconboxes}</div>
             </div>
         );
