@@ -7,6 +7,11 @@
     "presentation": "21 year old Nybro resident. Dart, JavaScript and opensource lover.",
     "icon": "monsters$yeti",
     "blogposts": [
+	{
+		"when": "2015-11-02 13:20",
+		"url": "https://jesperh.se/2015/11/02/ria-introduction/",
+		"title": "RIA introduction"
+	}
     ],
     "pullrequests": [
     ]
