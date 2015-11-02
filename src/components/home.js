@@ -1,6 +1,7 @@
 
 var React = require("react"),
 	_ = require("lodash"),
+	Icon = require("./icon"),
 	Link = require("react-router").Link,
 	members = require("../data/members");
 
@@ -9,7 +10,7 @@ var Home = React.createClass({
 		var rows = _.map(members,function(info,id){
 			return (
 				<tr key={id}>
-					<td><img src={"http://units.wesnoth.org/1.10/pics/core$images$units$"+info.icon+".png"} alt={info.icon} title={info.icon} /></td>
+					<td><Icon icon={info.icon} /></td>
 					<td><Link to={"/member/"+id}>{info.name}</Link></td>
 					<td>{info.blogposts.length}</td>
 					<td>{info.pullrequests.length}</td>
