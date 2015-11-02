@@ -1,0 +1,18 @@
+{
+  "name": "David Grenmyr",
+  "github": "Grenmyr",
+  "projectrepo": "",
+  "projectdesc": "",
+  "slack": "dg222cs",
+  "presentation": "33 years old, 2 kids and 1 wife. I am campus student in Kalmar and i have really been looking foward to this course.",
+  "icon": "trolls$grunt",
+  "blogposts": [
+    {
+      "when": "2015-11-02 10:58",
+      "url": "http://davidgrenmyr.blogspot.se/2015/11/forsta-inlagg.html",
+      "title": "Första inlägg"
+    }
+  ],
+  "pullrequests": [
+  ]
+}
