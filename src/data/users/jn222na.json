@@ -1,0 +1,18 @@
+{
+    "name": "Joakim Nilsson",
+    "github": "jn222na",
+    "projectrepo": "",
+    "projectdesc": "",
+    "slack": "exils",
+    "presentation": "22 year old from Öland/Kalmar, moba gamer(DOTA<3)",
+    "icon": "woses$wose-ancient",
+    "blogposts": [
+        {
+            "when": "2015-11-02 14:04",
+            "url": "https://github.com/jn222na/blog/blob/master/entry01.md",
+            "title": "Blog page"
+        }
+    ],
+    "pullrequests": [
+    ]
+}
