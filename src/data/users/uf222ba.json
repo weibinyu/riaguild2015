@@ -8,7 +8,11 @@
 	 I'm passionate about programming and have been working as developer for some years. Right now on leave from my employment as a Systems Engineer at Saab AB to be able to get my bachelor degree.",
     "icon": "goblins$pillager",
     "blogposts": [
-       
+        {
+            "when": "2015-11-02 09:44",
+            "url": "https://github.com/uf222ba/blog/blob/master/entry01.md",
+            "title": "First post - Presentation"
+        }
     ],
     "pullrequests": [
     ]
