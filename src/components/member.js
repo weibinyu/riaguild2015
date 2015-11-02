@@ -7,9 +7,6 @@ var React = require("react"),
 	markdown = require("markdown").markdown;
 
 var Member = React.createClass({
-	componentDidMount() {
-		console.log(members[this.props.params.name]);
-	},
 	render: function(){
 		var data = members[this.props.params.name],
 			posts = data.blogposts.map(function(post,n){
