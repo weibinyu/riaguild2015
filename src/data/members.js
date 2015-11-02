@@ -8,5 +8,5 @@ module.exports = {
 	dagashi: require("./users/dagashi.json"),
 	OskarKlintrot: require("./users/OskarKlintrot.json"),
 	MoombaDS: require("./users/MoombaDS.json"),
-	uf222ba: require(".users/uf222ba.json")
+	uf222ba: require("./users/uf222ba.json")
 };
