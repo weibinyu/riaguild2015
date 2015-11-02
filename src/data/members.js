@@ -12,5 +12,6 @@ module.exports = {
 	afrxx09: require("./users/afrxx09.json"),
 	drager: require("./users/drager.json"),
 	Grenmyr: require("./users/DavidGrenmyr.json"),
-	em222iv: require("./users/em222iv.json")
+	em222iv: require("./users/em222iv.json"),
+	jn222na: require("./users/jn222na.json")
 };
