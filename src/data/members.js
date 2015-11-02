@@ -7,5 +7,6 @@ module.exports = {
 	krawaller: require("./users/krawaller.json"),
 	dagashi: require("./users/dagashi.json"),
 	OskarKlintrot: require("./users/OskarKlintrot.json"),
-	MoombaDS: require("./users/MoombaDS.json")
+	MoombaDS: require("./users/MoombaDS.json"),
+    afrxx09: require("./users/afrxx09.json")
 };
