@@ -1,0 +1,18 @@
+{
+    "name": "Emil Karlsson",
+    "github": "ek222mw",
+    "projectrepo": "",
+    "projectdesc": "",
+    "slack": "emilk",
+    "presentation": "28 year old Blomstermåla resident, likes php.",
+    "icon": "drakes$inferno",
+    "blogposts": [
+        {
+            "when": "2015-11-03 13:03",
+            "url": "https://github.com/ek222mw/ria2015/blob/master/entry01.md",
+			"title": "Introduction for RIA"
+        }
+    ],
+    "pullrequests": [
+    ]
+}
