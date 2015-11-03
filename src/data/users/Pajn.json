@@ -1,11 +1,18 @@
 {
-name: "Rasmus Eneman",
-github: "Pajn",
-projectrepo: "n/a",
-projectdesc: "n/a",
-slack: "rasmus",
-presentation: "21 year old from Nyköping, Dart and JavaScript lover.",
-icon: "monsters$direwolf",
-blogposts: [ ],
-pullrequests: [ ]
+    "name": "Rasmus Eneman",
+    "github": "Pajn",
+    "projectrepo": "https://github.com/Pajn/Culinam",
+    "projectdesc": "n/a",
+    "slack": "rasmus",
+    "presentation": "21 year old from Nyköping, Dart and JavaScript lover.",
+    "icon": "monsters$direwolf",
+    "blogposts": [
+	{
+		"when": "2015-11-02 14:00",
+		"url": "https://rasmus.eneman.eu/ria-introduction/",
+		"title": "RIA introduction"
+	}
+    ],
+    "pullrequests": [
+    ]
 }
