@@ -3,9 +3,15 @@ var React = require("react");
 var Icon = React.createClass({
 	render: function(){
 
-		var URL = this.props.icon.split("$")[0] === "ninjas" ? 
-		"http://units.wesnoth.org/1.10/pics/add-ons$Internet_Meme_Era$images$" : 
-		"http://units.wesnoth.org/1.10/pics/core$images$units$";
+		var URL = null;
+
+		if (this.props.icon.split("$")[0] === "ninjas") { 
+			URL = "http://units.wesnoth.org/1.10/pics/add-ons$Internet_Meme_Era$images$";
+		} else if (this.props.icon.split("$")[0] === "demons") {
+			URL = "http://units.wesnoth.org/1.10/pics/add-ons$After_the_Storm$images$units$";
+		} else {
+			URL = "http://units.wesnoth.org/1.10/pics/core$images$units$";
+		}
 
 		return (
 			<span>
