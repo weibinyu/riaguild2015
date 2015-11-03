@@ -1,6 +1,5 @@
 var React = require("react"),
     _ = require("lodash"),
-    Link = require("react-router").Link,
     members = require("../data/members").members,
     icons = require("../data/icons.json"),
     Icon = require("./icon"),
