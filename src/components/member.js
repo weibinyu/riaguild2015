@@ -17,7 +17,7 @@ var Member = React.createClass({
 				var targetuser = members[pr.target];
 				return (
 					<tr key={n}>
-						<td><Link to={"/member/"+pr.target}><Badge icon={targetuser.icon} username={targetuser.name} /></Link></td>
+						<td><Badge id={targetuser.github} /></td>
 						<td><a href={pr.url} target="_blank">{pr.description}</a></td>
 					</tr>
 				);
@@ -26,7 +26,7 @@ var Member = React.createClass({
 				var authoruser = members[pr.by];
 				return (
 					<tr key={n}>
-						<td><Icon icon={authoruser.icon} /><Link to={"/member/"+pr.by}>{authoruser.name}</Link></td>
+						<td><Badge id={authoruser.github} /></td>
 						<td><a href={pr.url} target="_blank">{pr.description}</a></td>
 					</tr>
 				);

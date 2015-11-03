@@ -17,10 +17,8 @@ var Gallery = React.createClass({
                 <span key={n} className={usedicons[icon]?"icon chosen":"icon"}>                    
                     { 
                         usedicons[icon] ?
-                        <Link to={"/member/"+usedicons[icon]}>
-                            <Badge icon ={icon} username={members[usedicons[icon]].name} />
-                        </Link> :
-                        <Icon icon={icon} linksTo={usedicons[icon]? usedicons[icon]: null} />
+                        <Badge id={usedicons[icon]} /> :
+                        <Icon icon={icon} />
                     }                 
                 </span>
             );
