@@ -6,3 +6,22 @@
     opacity: 0.6;
     background-color: red;
 }
+
+
+ul.nav > li > a.active {
+    font-weight: bold;
+}
+ul.nav:after {
+    content: " ";
+    clear: both;
+    display: block;
+}
+ul.nav li {
+    float: left;
+    margin-left: 1em;
+}
+ul.nav {
+    list-style-type: none;
+    -webkit-padding-start: 0;
+    background-color: #CCC;
+}

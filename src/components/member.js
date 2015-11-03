@@ -32,7 +32,6 @@ var Member = React.createClass({
 			});
 		return (
 			<div>
-				<Link to="/">Back to list</Link>
 				<h3>{data.name}</h3>
 
 				<p><Icon icon={data.icon} /></p>				
