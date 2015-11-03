@@ -11,14 +11,14 @@ var React = require("react"),
 var Gallery = React.createClass({
     render: function(){
         var iconboxes = icons.map(function(icon,n){
-            
+
             return (
-                <span key={n} className={usedicons[icon]?"icon chosen":"icon"}>                    
-                    { 
+                <span key={n} className={usedicons[icon]?"icon chosen":"icon"}>
+                    {
                         usedicons[icon] ?
                         <Badge id={usedicons[icon]} /> :
                         <Icon icon={icon} />
-                    }                 
+                    }
                 </span>
             );
         });
