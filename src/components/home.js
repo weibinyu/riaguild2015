@@ -12,8 +12,8 @@ var Home = React.createClass({
 			<div>
 				<h3>Welcome!</h3>
 				<p>
-This is the student roster for the
-<a href="https://coursepress.lnu.se/kurs/ria-utveckling-med-javascript/" target="_blank">RIA JavaScript course</a>
+This is the student roster for the 
+<a href="https://coursepress.lnu.se/kurs/ria-utveckling-med-javascript/" target="_blank">RIA JavaScript course</a> 
 at <a href="http://lnu.se" target="_blank">Linnaeus University</a>. Github repo is
 <a href="https://github.com/krawaller/riaguild2015" target="_blank">here</a>.
 				</p>
