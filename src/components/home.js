@@ -3,7 +3,8 @@ var React = require("react"),
 	_ = require("lodash"),
 	Icon = require("./icon"),
 	Link = require("react-router").Link,
-	members = require("../data/members").members;
+	// transform to array and sort by name
+	members = _.sortBy(_.map(require("../data/members").members,_.identity),"name");
 
 var Home = React.createClass({
 	render: function(){
