@@ -1,6 +1,4 @@
-var React = require("react"),
-	members = require("../data/members"),
-	markdown = require("markdown").markdown;
+var React = require("react");
 
 var Icon = React.createClass({
 	render: function(){
