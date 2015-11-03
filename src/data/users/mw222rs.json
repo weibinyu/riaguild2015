@@ -1,0 +1,18 @@
+{
+	"name": "Mattias Wikström",
+	"github": "mw222rs",
+	"projectrepo": "",
+	"projectdesc": "",
+	"slack": "mattiaswikstroem",
+	"presentation": "28 year old person.",
+	"icon": "ninjas$sumo",
+	"blogposts": [
+		{
+			"when": "2015-11-02 16:59:12",
+			"url": "http://mattias.rocks/my-respiration-and-inspiration/",
+			"title": "Song of Myself"
+		}
+	],
+	"pullrequests": [
+	]
+}
