@@ -8,7 +8,8 @@ var React = require("react"),
 
 var Home = React.createClass({
 	render: function(){
-		var rows = _.map(members,function(info,id){
+		var rows = _.map(members,function(info,n){
+			var id = info.id;
 			return (
 				<tr key={id}>
 					<td><Icon icon={info.icon} /><Link to={"/member/"+id}>{info.name}</Link></td>

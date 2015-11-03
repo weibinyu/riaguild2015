@@ -25,7 +25,7 @@ var members = {
 
 var _ = require("lodash");
 
-// add received pull requests to each member
+// add id and received pull requests to each member
 members = _.reduce(members,function(ret,data,id){
 	_.each(data.pullrequests || [],function(pr,n){
 		var target = (pr.url.match("^https:\/\/github\.com\/([^\/]*)\/") || [])[1];
@@ -37,6 +37,7 @@ members = _.reduce(members,function(ret,data,id){
 			console.log(id,"Unknown PR target",target);
 		}
 	});
+	ret[id].id = id;
 	return ret;
 },members);
 
