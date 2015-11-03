@@ -5,15 +5,19 @@ var React = require("react"),
     icons = require("../data/icons.json"),
     Icon = require("./icon"),
     usedicons = _.reduce(members,function(ret,data,id){
-        return Object.assign(ret,{[data.icon]:1});
+        return Object.assign(ret,{[data.icon]:data.name});
     },{});
 
 var Gallery = React.createClass({
     render: function(){
         var iconboxes = icons.map(function(icon,n){
+            
             return (
-                <span key={n} className={usedicons[icon]?"icon chosen":"icon"}>
+                <span key={n} className={usedicons[icon]?"icon chosen":"icon"}>                    
                     <Icon icon={icon} />
+                    {usedicons[icon] ? 
+                        <p className="claimed">{usedicons[icon]}</p> :
+                        ""}
                 </span>
             );
         });
