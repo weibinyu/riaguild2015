@@ -4,7 +4,9 @@ contained in `this.props.children` and rendered out.
 */
 
 var React = require('react'),
-	Link = require("react-router").Link;
+	Router = require("react-router"),
+	Link = Router.Link,
+	IndexLink = Router.IndexLink;
 
 var Wrapper = React.createClass({
     render: function() {
@@ -12,7 +14,7 @@ var Wrapper = React.createClass({
             <div className="wrapper">
                 <h2>RIA course member guild 2015</h2>
                 <ul className="nav">
-                	<li><Link activeClassName="active" to="/">Home</Link></li>
+                	<li><IndexLink activeClassName="active" to="/">Home</IndexLink></li>
                 	<li><Link activeClassName="active" to="/members/">Roster</Link></li>
                 	<li><Link activeClassName="active" to="/actions/">Deeds</Link></li>
                 	<li><Link activeClassName="active" to="/gallery/">Gallery</Link></li>
