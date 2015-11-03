@@ -24,7 +24,6 @@ var Actions = React.createClass({
 		});
 		return (
 			<div>
-				<Link to="/">Back to member list</Link>
 				<p>So, what's been going on lately?</p>
 				<table>
 					<thead>
