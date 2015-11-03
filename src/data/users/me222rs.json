@@ -9,7 +9,7 @@
 	"blogposts": [
 		{
 			"when": "2015-11-02 13:03",
-            		"url": "https://github.com/me222rs/blog/entry01.md",
+            		"url": "https://github.com/me222rs/blog/blob/master/entry01.md",
             		"title": "First blogpost"
 		}
 	],
