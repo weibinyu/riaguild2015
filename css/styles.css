@@ -7,10 +7,10 @@
     background-color: red;
 }
 
-.icon-span {
-	position: relative;	
+.badge {
+	position: relative;
 }
-a.claimed {
+p.badge-name {
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -18,7 +18,7 @@ a.claimed {
 	color: #000;
 	background-color: rgba(255, 255,255, .7)
 }
-a.claimed:hover {
+p.badge-name:hover {
 	color: #666;
 }
 

@@ -4,6 +4,7 @@ var React = require("react"),
 	Link = require("react-router").Link,
 	members = require("../data/members").members,
 	Icon = require("./icon"),
+	Badge = require("./badge"),
 	markdown = require("markdown").markdown;
 
 var Member = React.createClass({
@@ -16,7 +17,7 @@ var Member = React.createClass({
 				var targetuser = members[pr.target];
 				return (
 					<tr key={n}>
-						<td><Icon icon={targetuser.icon} /><Link to={"/member/"+pr.target}>{targetuser.name}</Link></td>
+						<td><Link to={"/member/"+pr.target}><Badge icon={targetuser.icon} username={targetuser.name} /></Link></td>
 						<td><a href={pr.url} target="_blank">{pr.description}</a></td>
 					</tr>
 				);

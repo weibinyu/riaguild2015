@@ -4,6 +4,7 @@ var React = require("react"),
     members = require("../data/members").members,
     icons = require("../data/icons.json"),
     Icon = require("./icon"),
+    Badge = require("./badge"),
     usedicons = _.reduce(members,function(ret,data,id){
         return Object.assign(ret,{[data.icon]:data.id});
     },{});
@@ -14,7 +15,13 @@ var Gallery = React.createClass({
             
             return (
                 <span key={n} className={usedicons[icon]?"icon chosen":"icon"}>                    
-                    <Icon icon={icon} linksTo={usedicons[icon]? usedicons[icon]: null} />                    
+                    { 
+                        usedicons[icon] ?
+                        <Link to={"/member/"+usedicons[icon]}>
+                            <Badge icon ={icon} username={members[usedicons[icon]].name} />
+                        </Link> :
+                        <Icon icon={icon} linksTo={usedicons[icon]? usedicons[icon]: null} />
+                    }                 
                 </span>
             );
         });

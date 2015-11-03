@@ -1,6 +1,4 @@
-var React = require("react"),
-	members = require("../data/members").members,
-	Link = require("react-router").Link;
+var React = require("react");
 
 var Icon = React.createClass({
 	render: function(){
@@ -16,14 +14,8 @@ var Icon = React.createClass({
 		}
 
 		return (
-			<span className="icon-span">
+			<span>
 				<img src={URL+this.props.icon+".png"} alt={this.props.icon} title={this.props.icon} />
-				{ this.props.linksTo ?
-					<Link to={"/member/"+this.props.linksTo} className="claimed">
-						{members[this.props.linksTo].name.split(" ")[0]}						
-					</Link> :
-					""					
-				}
 			</span>
 			);
 	}
