@@ -17,6 +17,7 @@ module.exports = {
 	mw222rs: require("./users/mw222rs.json"),
 	jn222na: require("./users/jn222na.json"),
 	Pajn: require("./users/Pajn.json"),
-	ek222mw: require("./users/ek222mw.json")
+	ek222mw: require("./users/ek222mw.json"),
+	me222rs: require("./users/me222rs.json")
 	
 };
