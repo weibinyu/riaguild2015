@@ -9,12 +9,14 @@ var React = require('react'),
     Wrapper = require('./components/wrapper'),
     Home = require('./components/home'),
     Member = require('./components/member'),
-    Gallery = require('./components/gallery');
+    Gallery = require('./components/gallery'),
+    Actions = require('./components/actions');
 
 module.exports = (
     <Route path="/" component={Wrapper}>
         <IndexRoute component={Home} />
         <Route path="/member/:name" component={Member} />
         <Route path="/gallery" component={Gallery} />
+        <Route path="/actions" component={Actions} />
     </Route>
 );

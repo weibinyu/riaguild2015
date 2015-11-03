@@ -2,7 +2,7 @@
 var React = require("react"),
 	_ = require("lodash"),
 	Link = require("react-router").Link,
-	members = require("../data/members"),
+	members = require("../data/members").members,
 	Icon = require("./icon"),
 	markdown = require("markdown").markdown;
 
@@ -11,6 +11,24 @@ var Member = React.createClass({
 		var data = members[this.props.params.name],
 			posts = data.blogposts.map(function(post,n){
 				return <li key={n}><a target="_blank" href={post.url}>{post.title+" ("+post.when+")"}</a></li>;
+			}),
+			pullrequests = (data.pullrequests || []).map(function(pr,n){
+				var targetuser = members[pr.target];
+				return (
+					<tr key={n}>
+						<td><Icon icon={targetuser.icon} /><Link to={"/member/"+pr.target}>{targetuser.name}</Link></td>
+						<td><a href={pr.url} target="_blank">{pr.description}</a></td>
+					</tr>
+				);
+			}),
+			received = (data.received || []).map(function(pr,n){
+				var authoruser = members[pr.by];
+				return (
+					<tr key={n}>
+						<td><Icon icon={authoruser.icon} /><Link to={"/member/"+pr.by}>{authoruser.name}</Link></td>
+						<td><a href={pr.url} target="_blank">{pr.description}</a></td>
+					</tr>
+				);
 			});
 		return (
 			<div>
@@ -32,6 +50,24 @@ var Member = React.createClass({
 				)}
 				<h3>Blog posts:</h3>
 				<ul>{posts}</ul>
+				{pullrequests.length && (
+					<div>
+						<h3>Pull requests</h3>
+						<table>
+							<thead><tr><th>Target</th><th>Content</th></tr></thead>
+							<tbody>{pullrequests}</tbody>
+						</table>
+					</div>
+				) || ""}
+				{received.length && (
+					<div>
+						<h3>Received pull requests</h3>
+						<table>
+							<thead><tr><th>By</th><th>Content</th></tr></thead>
+							<tbody>{received}</tbody>
+						</table>
+					</div>
+				) || ""}
 			</div>
 		);
 	}
