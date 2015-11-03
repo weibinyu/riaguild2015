@@ -5,14 +5,19 @@
 .chosen {
     opacity: 0.6;
     background-color: red;
-    position: relative;
 }
-.claimed {
+
+.icon-span {
+	position: relative;	
+}
+a.claimed {
 	position: absolute;
-	top: 0;
-	bottom: 0;
 	left: 0;
-	right: 0;
+	bottom: 0;
 	font-weight: bold;
-	color: #fff;
+	color: #000;
+	background-color: rgba(255, 255,255, .7)
+}
+a.claimed:hover {
+	color: #666;
 }

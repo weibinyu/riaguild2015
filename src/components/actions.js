@@ -14,11 +14,11 @@ var Actions = React.createClass({
 				tuser = members[info.target];
 			return (
 				<tr key={id}>
-					<td><Icon icon={user.icon} /><Link to={"/member/"+info.by}>{user.name}</Link></td>
+					<td><Icon icon={user.icon} linksTo={info.by} /></td>
 					<td>{info.type}</td>
 					<td>{info.when}</td>
 					<td><a href={info.url} target="_blank">{info.description}</a></td>
-					<td>{info.target && <span><Icon icon={tuser.icon}/><Link to={"/member/"+info.target}>{tuser.name}</Link></span> || ""}</td>
+					<td>{info.target && <Icon icon={tuser.icon} linksTo={info.target} /> || ""}</td>
 				</tr>
 			);
 		});
