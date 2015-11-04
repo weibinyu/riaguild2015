@@ -9,7 +9,8 @@ var React = require("react"),
 var Heroes = React.createClass({
 	render: function(){
 		var blogger = members[mem.mostposts],
-			helper = members[mem.mostprs];
+			helper = members[mem.mostprs],
+			wisest = members[mem.wisest];
 		return (
 			<div>
 				<p>These are the current heroes of the guild. Make sure to pay them proper reverence in the Slack channel!</p>
@@ -25,6 +26,10 @@ var Heroes = React.createClass({
 						<tr>
 							<td><Badge id={helper.id}/></td>
 							<td>is the most <strong>helpful</strong> with {helper.pullrequests.length} pull requests!</td>
+						</tr>
+						<tr>
+							<td><Badge id={wisest.id}/></td>
+							<td>is the most <strong>wisest</strong> with {wisest.sageadvice.length} sage advice!</td>
 						</tr>
 					</tbody>
 				</table>

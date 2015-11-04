@@ -75,11 +75,25 @@ var actions = _.reduce(members,function(ret,data,id){
 	return ret;
 },[]);
 
+// fix sage advice;
+
+var sageadvice = [ ["afrxx09",1] ]
+
+members = _.mapValues(members,function(data){
+	return Object.assign({
+		sageadvice: sageadvice.filter(function(i){ return i[0] === data.id; })
+	},data);
+});
+
+console.log("WHAA",members);
+
 module.exports = {
 	members: members,
 	actions: _.sortBy(actions,"when").reverse(),
 	numberofposts: numposts,
 	numberofprs: numpr,
 	mostposts: mostpostswho,
-	mostprs: mostprswho
+	mostprs: mostprswho,
+	sageadvice: sageadvice,
+	wisest: "afrxx09"
 };
