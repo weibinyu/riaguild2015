@@ -17,6 +17,7 @@ var members = {
 	mw222rs: require("./users/mw222rs.json"),
 	jn222na: require("./users/jn222na.json"),
 	Pajn: require("./users/Pajn.json"),
+	JesperHolmstrom: require("./users/JesperHolstrom.json"),
 	ek222mw: require("./users/ek222mw.json"),
 	me222rs: require("./users/me222rs.json"),
 	Angamanga: require("./users/Angamanga.json"),
