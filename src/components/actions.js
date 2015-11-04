@@ -7,7 +7,7 @@ var React = require("react"),
 	actions = mem.actions;
 
 function ordernum(n){
-	return n + ({1:"st",2:"nd"}[n % 10] || "rd");
+	return n + ({1:"st",2:"nd",3:"rd"}[n % 10] || "th");
 }
 
 var Actions = React.createClass({
