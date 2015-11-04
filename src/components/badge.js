@@ -6,12 +6,16 @@ var React = require("react"),
 var Badge = React.createClass({
 	render() {
 		var currentMember = members[this.props.id],
-			names = currentMember.name.split(" ");
+			names = currentMember.name.split(" "),
+			surnameletters = {
+				David: 1,
+				Jesper: 2
+			}[names[0]];
 		return (
 			<span className="badge">
 				<Link to={"/member/"+currentMember.github}>
 					<Icon icon={currentMember.icon} />
-					<p className="badge-name">{names[0]+" "+names[1][0]}</p>
+					<p className="badge-name">{names[0]+(surnameletters ? " "+names[1].substr(0,surnameletters) : "")}</p>
 				</Link>
 			</span>
 		);
