@@ -1,0 +1,16 @@
+{
+    "name": "Maria Nygren",
+    "github": "mn22nw",
+    "slack": "@mia",
+    "presentation": "27 year old Örebro resident, love to learn new stuff, especially within the subjects of programming, music (piano/guitar/base), 3D-modeling and design/art.",
+    "icon": "ninjas$yohei",
+    "blogposts": [
+        {
+            "when": "2015-11-03 14:50",
+            "url": "http://mianygren.nu/RIA/Blog/aboutMe/",
+            "title": "About me - Presentation"
+        }
+    ],
+    "pullrequests": [
+    ]
+}
