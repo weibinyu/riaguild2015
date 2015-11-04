@@ -1,0 +1,17 @@
+{
+	"name": "Elin Nilsson",
+	"github": "swoot1",
+	"projectrepo": "ria2015",
+	"projectdesc": "Magic",
+	"slack": "en222by",
+	"presentation": "25 årig programmerare i Göteborg f.d. värmlänning. Gillar [Codewars](https://www.codewars.com/users/sign_in) och böcker.",
+	"icon": "human-outlaws$thief",
+	"blogposts": [
+		{
+			"when": "2015-11-03 21:20",
+			"url": "https://github.com/Swoot1/ria2015/blob/master/blog/2015-11-03-presentation.markdown",
+			"title": "Presentation"
+		}
+	],
+	"pullrequests": []
+}
