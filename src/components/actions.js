@@ -2,7 +2,6 @@
 var React = require("react"),
 	_ = require("lodash"),
 	Badge = require("./badge"),
-	Link = require("react-router").Link,
 	mem = require("../data/members"),
 	members = mem.members,
 	actions = mem.actions;
