@@ -7,6 +7,10 @@ var React = require("react"),
 	members = mem.members,
 	actions = mem.actions;
 
+function ordernum(n){
+	return n + ({1:"st",2:"nd"}[n % 10] || "rd");
+}
+
 var Actions = React.createClass({
 	render: function(){
 		var rows = _.map(actions,function(info,id){
@@ -15,19 +19,22 @@ var Actions = React.createClass({
 			return (
 				<tr key={id}>
 					<td><Badge id={user.github} /></td>
-					<td>{info.type}</td>
-					<td>{info.when}</td>
-					<td><a href={info.url} target="_blank">{info.description}</a></td>
+					<td>{info.when.substr(0,10)}<br/>{info.when.substr(12)}</td>
+					<td>
+						{ {pr:"made",post:"wrote"}[info.type]+" "+ordernum(info.number)+" "+{pr:"PR",post:"post"}[info.type]+": " }
+						<br/>
+						<a href={info.url} target="_blank">{info.description}</a>
+					</td>
 					<td>{info.target && <span><Badge id={tuser.github} /></span> || ""}</td>
 				</tr>
 			);
 		});
 		return (
 			<div>
-				<p>So, what's been going on lately?</p>
+				<p>There's been {mem.numberofposts} posts and {mem.numberofprs} pull requests so far:</p>
 				<table>
 					<thead>
-						<tr><th>Name</th><th>Type</th><th>When</th><th>Link</th><th>Target (if PR)</th></tr>
+						<tr><th>Who</th><th>When</th><th>What</th><th>Target (if PR)</th></tr>
 					</thead>
 					<tbody>
 						{rows}

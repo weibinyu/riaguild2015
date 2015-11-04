@@ -45,13 +45,17 @@ members = _.reduce(members,function(ret,data,id){
 },members);
 
 // lift out action log
+var numposts = 0, numpr = 0;
+
 var actions = _.reduce(members,function(ret,data,id){
-	_.each(data.blogposts,function(post){
-		ret.push(Object.assign({type:"post",description:post.title,by:id},post));
-	});
-	_.each(data.pullrequests || [],function(pr){
-		ret.push(Object.assign({type:"pr",by:id},pr));
-	});
+	ret = ret.concat(_.map(data.blogposts,function(post,n){
+		numposts++;
+		return Object.assign({type:"post",description:post.title,by:id,number:n+1},post);
+	}));
+	ret = ret.concat(_.map(data.pullrequests || [],function(pr,n){
+		numpr++;
+		return Object.assign({type:"pr",by:id,number:n+1},pr);
+	}));
 	return ret;
 },[]);
 
@@ -59,5 +63,7 @@ var actions = _.reduce(members,function(ret,data,id){
 
 module.exports = {
 	members: members,
-	actions: _.sortBy(actions,"when").reverse()
+	actions: _.sortBy(actions,"when").reverse(),
+	numberofposts: numposts,
+	numberofprs: numpr
 };
