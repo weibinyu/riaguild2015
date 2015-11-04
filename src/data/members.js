@@ -25,7 +25,8 @@ var members = {
 	as223jx: require("./users/as223jx.json"),
 	swoot1: require("./users/swoot1.json"),
 	EleonorL: require("./users/EleonorL.json"),
-    ViktorJ: require("./users/ViktorJ.json")
+    ViktorJ: require("./users/ViktorJ.json"),
+    Eldraev: require("./users/Eldraev.json")
 };
 
 var _ = require("lodash");
