@@ -19,7 +19,7 @@ var Actions = React.createClass({
 			return (
 				<tr key={id}>
 					<td><Badge id={user.github} /></td>
-					<td>{info.when.substr(0,10)}<br/>{info.when.substr(12)}</td>
+					<td>{info.when.substr(0,10)}<br/>{info.when.substr(11)}</td>
 					<td>
 						{ {pr:"made",post:"wrote"}[info.type]+" "+ordernum(info.number)+" "+{pr:"PR",post:"post"}[info.type]+": " }
 						<br/>
