@@ -23,7 +23,8 @@ var members = {
 	Angamanga: require("./users/Angamanga.json"),
 	mn22nw: require("./users/mn22nw.json"),
 	as223jx: require("./users/as223jx.json"),
-	swoot1: require("./users/swoot1.json")
+	swoot1: require("./users/swoot1.json"),
+	EleonorL: require("./users/EleonorL.json")
 };
 
 var _ = require("lodash");
