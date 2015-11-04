@@ -27,7 +27,8 @@ var members = {
 	EleonorL: require("./users/EleonorL.json"),
     	ViktorJ: require("./users/ViktorJ.json"),
     	Eldraev: require("./users/Eldraev.json"),
-	bc222az: require("./users/bc222az.json")
+	bc222az: require("./users/bc222az.json"),
+    	js22gz: require("./users/js22gz.json")
 };
 
 var _ = require("lodash");
