@@ -17,15 +17,15 @@ var Heroes = React.createClass({
 					</thead>
 					<tbody>
 						<tr>
-							<td>Our most prolific bloggers <br/> have written {heroes.blogposts[0]} posts:</td>
+							<td>Our <strong>most prolific bloggers</strong> <br/> have written {heroes.blogposts[0]} posts:</td>
 							<td>{ _.map(heroes.blogposts[1],function(id){ return <Badge key={id} id={id} />}) }</td>
 						</tr>
 						<tr>
-							<td>Our most helpful members <br/> have made {heroes.pullrequests[0]} pull requests:</td>
+							<td>Our <strong>most helpful members</strong> <br/> have made {heroes.pullrequests[0]} pull requests:</td>
 							<td>{ _.map(heroes.pullrequests[1],function(id){ return <Badge key={id} id={id} />}) }</td>
 						</tr>
 						<tr>
-							<td>Our wisest members have <br/> written {heroes.sageadvice[0]} sage advice:</td>
+							<td>Our <strong>wisest members</strong> have <br/> written {heroes.sageadvice[0]} sage advice:</td>
 							<td>{ _.map(heroes.sageadvice[1],function(id){ return <Badge key={id} id={id} />}) }</td>
 						</tr>
 					</tbody>
