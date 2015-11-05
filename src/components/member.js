@@ -42,9 +42,9 @@ var Member = React.createClass({
 				{data.projectrepo && (
 					<div>
 						<h3>Project</h3>
-						{data.projectdesc+" "} 
+						{(data.projectdesc || "<no description given>")+" "} 
 						  (<a href={"http://github.com/"+data.github+"/"+data.projectrepo}>code</a>) 
-						  (<a href={"http://"+data.github+".github.io/"+data.projectrepo}>run</a>) 
+						  (<a href={"http://"+data.github+".github.io/"+data.projectrepo+"/"+(data.projectentry||"")}>run</a>) 
 					</div>
 				)}
 				<h3>Blog posts:</h3>

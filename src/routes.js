@@ -11,7 +11,8 @@ var React = require('react'),
     Roster = require('./components/roster'),
     Member = require('./components/member'),
     Gallery = require('./components/gallery'),
-    Actions = require('./components/actions');
+    Actions = require('./components/actions'),
+    Advice = require('./components/advice');
 
 module.exports = (
     <Route path="/" component={Wrapper}>
@@ -22,5 +23,6 @@ module.exports = (
         </Route>
         <Route path="/gallery" component={Gallery} />
         <Route path="/actions" component={Actions} />
+        <Route path="/advice" component={Advice} />
     </Route>
 );
