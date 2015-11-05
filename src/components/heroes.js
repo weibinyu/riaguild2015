@@ -4,32 +4,29 @@ var React = require("react"),
 	Badge = require("./badge"),
 	mem = require("../data/members"),
 	members = mem.members,
-	actions = mem.actions;
+	heroes = mem.heroes;
 
 var Heroes = React.createClass({
 	render: function(){
-		var blogger = members[mem.mostposts],
-			helper = members[mem.mostprs],
-			wisest = members[mem.wisest];
 		return (
 			<div>
 				<p>These are the current heroes of the guild. Make sure to pay them proper reverence in the Slack channel!</p>
 				<table>
 					<thead>
-						<tr><th>Who</th><th>What</th></tr>
+						<tr><th>What</th><th>Who</th></tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td><Badge id={blogger.id}/></td>
-							<td>is the most prolific <strong>blogger</strong> with {blogger.blogposts.length} posts!</td>
+							<td>Our most prolific bloggers <br/> have written {heroes.blogposts[0]} posts:</td>
+							<td>{ _.map(heroes.blogposts[1],function(id){ return <Badge key={id} id={id} />}) }</td>
 						</tr>
 						<tr>
-							<td><Badge id={helper.id}/></td>
-							<td>is the most <strong>helpful</strong> with {helper.pullrequests.length} pull requests!</td>
+							<td>Our most helpful members <br/> have made {heroes.pullrequests[0]} pull requests:</td>
+							<td>{ _.map(heroes.pullrequests[1],function(id){ return <Badge key={id} id={id} />}) }</td>
 						</tr>
 						<tr>
-							<td><Badge id={wisest.id}/></td>
-							<td>is the most <strong>wisest</strong> with {wisest.sageadvice.length} sage advice!</td>
+							<td>Our wisest members have <br/> written {heroes.sageadvice[0]} sage advice:</td>
+							<td>{ _.map(heroes.sageadvice[1],function(id){ return <Badge key={id} id={id} />}) }</td>
 						</tr>
 					</tbody>
 				</table>

@@ -50,36 +50,24 @@ members = _.reduce(members,function(ret,data,id){
 },members);
 
 // lift out action log
-var numposts = 0, numpr = 0, mostpostswho, mostposts = 0, mostpostsnewest = 0, mostprswho, mostprs = 0, mostprsnewest = 0;
+
+var numposts = 0, numpr = 0;
 
 var actions = _.reduce(members,function(ret,data,id){
-	var latestpost = 0, latestpr = 0;
 	ret = ret.concat(_.map(data.blogposts,function(post,n){
 		numposts++;
-		if (post.when > latestpost) { latestpost = post.when; }
 		return Object.assign({type:"post",description:post.title,by:id,number:n+1},post);
 	}));
 	ret = ret.concat(_.map(data.pullrequests || [],function(pr,n){
 		numpr++;
-		if (pr.when > latestpr) { latestpr = pr.when; }
 		return Object.assign({type:"pr",by:id,number:n+1},pr);
 	}));
-	if (data.blogposts.length > mostposts || data.blogposts.length === mostposts && latestpost > mostpostsnewest){
-		mostpostswho = id;
-		mostposts = data.blogposts.length;
-		mostpostsnewest = latestpost;
-	}
-	if (data.pullrequests.length > mostprs || data.pullrequests.length === mostprs && latestpr > mostprsnewest){
-		mostprswho = id;
-		mostprs = data.pullrequests.length;
-		mostprsnewest = latestpr;
-	}
 	return ret;
 },[]);
 
 // fix sage advice;
 
-var sageadvice = [ ["afrxx09",1] ]
+var sageadvice = [ ["afrxx09",1], ["Pajn",2] ] // David's divine opinion :P
 
 members = _.mapValues(members,function(data){
 	return Object.assign({
@@ -87,15 +75,24 @@ members = _.mapValues(members,function(data){
 	},data);
 });
 
-console.log("WHAA",members);
+// find heroes
+
+var heroes = _.reduce(members,function(ret,user){
+	return _.mapValues(ret,function(current,aspect){
+		if (user[aspect].length > current[0]){
+			return [user[aspect].length,[user.id]];
+		} else if (user[aspect].length === current[0]){
+			return [user[aspect].length,current[1].concat(user.id)];
+		} else {
+			return current;
+		}
+	});
+},{blogposts:[0,[]],pullrequests:[0,[]],sageadvice:[0,[]]});
+
 
 module.exports = {
 	members: members,
 	actions: _.sortBy(actions,"when").reverse(),
-	numberofposts: numposts,
-	numberofprs: numpr,
-	mostposts: mostpostswho,
-	mostprs: mostprswho,
-	sageadvice: sageadvice,
-	wisest: "afrxx09"
+	heroes: heroes,
+	sageadvice: sageadvice
 };
