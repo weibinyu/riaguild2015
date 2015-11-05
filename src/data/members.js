@@ -94,5 +94,7 @@ module.exports = {
 	members: members,
 	actions: _.sortBy(actions,"when").reverse(),
 	heroes: heroes,
-	sageadvice: sageadvice
+	sageadvice: sageadvice,
+	numberofposts: numposts,
+	numberofprs: numpr
 };
