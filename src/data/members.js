@@ -67,7 +67,7 @@ var actions = _.reduce(members,function(ret,data,id){
 
 // fix sage advice;
 
-var sageadvice = [ ["afrxx09",1], ["Pajn",2], ["mw222rs",1] ] // David's divine opinion :P
+var sageadvice = [ ["uf222ba",1], ["afrxx09",1], ["Pajn",2], ["mw222rs",1] ] // David's divine opinion :P
 
 members = _.mapValues(members,function(data){
 	return Object.assign({
