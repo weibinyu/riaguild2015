@@ -15,7 +15,7 @@
 	],
 	"pullrequests": [
 		{
-			"when": "2015-11-05 12:40",
+			"when": "2015-11-06 12:40",
 			"url": "https://github.com/Dagashi/ria-2015/pull/1",
 			"description": "Extracted Sidebar from Wrapper"
 		}
