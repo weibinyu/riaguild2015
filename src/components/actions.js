@@ -20,7 +20,7 @@ var Actions = React.createClass({
 					<td><Badge id={user.github} /></td>
 					<td>{info.when.substr(0,10)}<br/>{info.when.substr(11)}</td>
 					<td>
-						{ {pr:"made",post:"wrote"}[info.type]+" "+ordernum(info.number)+" "+{pr:"PR",post:"post"}[info.type]+": " }
+						{ {pr:"made",post:"wrote"}[info.type]+" "+ordernum(info.number)+" "+{pr:"PR",post:"post"}[info.type]+(info.sageadvice?" (sage advice!)":"")+": " }
 						<br/>
 						<a href={info.url} target="_blank">{info.description}</a>
 					</td>

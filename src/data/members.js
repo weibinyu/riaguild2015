@@ -49,6 +49,24 @@ members = _.reduce(members,function(ret,data,id){
 	return ret;
 },members);
 
+// fix sage advice;
+
+var sageadvice = [ ["uf222ba",1], ["afrxx09",1], ["Pajn",2], ["mw222rs",1], ["drager",3] ] // David's divine opinion :P
+
+members = _.mapValues(members,function(data){
+	var filtered = sageadvice.filter(function(i){ return i[0] === data.id; }),
+		plucked = _.pluck(filtered,1);
+	return Object.assign({},data,{
+		sageadvice: plucked,
+		blogposts: _.map(data.blogposts,function(post,n){
+			return Object.assign({
+				sageadvice: _.contains(plucked,n)
+			},post);
+		})
+	});
+});
+
+
 // lift out action log
 
 var numposts = 0, numpr = 0;
@@ -56,24 +74,24 @@ var numposts = 0, numpr = 0;
 var actions = _.reduce(members,function(ret,data,id){
 	ret = ret.concat(_.map(data.blogposts,function(post,n){
 		numposts++;
-		return Object.assign({type:"post",description:post.title,by:id,number:n+1},post);
+		return Object.assign({
+			type:"post",
+			description:post.title,
+			by:id,
+			number:n+1
+		},post);
 	}));
 	ret = ret.concat(_.map(data.pullrequests || [],function(pr,n){
 		numpr++;
-		return Object.assign({type:"pr",by:id,number:n+1},pr);
+		return Object.assign({
+			type:"pr",
+			by:id,
+			number:n+1
+		},pr);
 	}));
 	return ret;
 },[]);
 
-// fix sage advice;
-
-var sageadvice = [ ["uf222ba",1], ["afrxx09",1], ["Pajn",2], ["mw222rs",1], ["drager",3] ] // David's divine opinion :P
-
-members = _.mapValues(members,function(data){
-	return Object.assign({
-		sageadvice: sageadvice.filter(function(i){ return i[0] === data.id; })
-	},data);
-});
 
 // find heroes
 
@@ -89,6 +107,7 @@ var heroes = _.reduce(members,function(ret,user){
 	});
 },{blogposts:[0,[]],pullrequests:[0,[]],sageadvice:[0,[]]});
 
+console.log("MEMBERS",members);
 
 module.exports = {
 	members: members,

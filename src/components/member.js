@@ -10,7 +10,7 @@ var Member = React.createClass({
 	render: function(){
 		var data = members[this.props.params.name],
 			posts = data.blogposts.map(function(post,n){
-				return <li key={n}><a target="_blank" href={post.url}>{post.title+" ("+post.when+")"}</a></li>;
+				return <li key={n}><a target="_blank" href={post.url}>{post.title+" ("+post.when+(post.sageadvice ? ", sage advice!":"")+")"}</a></li>;
 			}),
 			pullrequests = (data.pullrequests || []).map(function(pr,n){
 				var targetuser = members[pr.target];
