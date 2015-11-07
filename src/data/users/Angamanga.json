@@ -1,0 +1,16 @@
+{
+  "name": "Anna Iosif",
+  "github": "Angamanga",
+  "slack": "annaiosif",
+  "presentation": "37 year old, two kids, one husband, live in Uppsala. JavaScript is my favourite programming language and my secret skill is flipping pancakes in the air. ",
+  "icon": "demons$hellbent-tide",
+  "blogposts": [
+    {
+      "when": "2015-11-03 15:00",
+      "url": "http://angamanga.github.io/2015/11/03/about-me.html",
+      "title": "First post, about me!"
+    }
+  ],
+  "pullrequests": [
+  ]
+}
