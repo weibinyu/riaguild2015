@@ -5,7 +5,7 @@ var Icon = React.createClass({
 
 		var URL = null;
 
-		if (this.props.icon.split("$")[0] === "ninjas") { 
+		if (this.props.icon.split("$")[0] === "ninjas"){
 			URL = "http://units.wesnoth.org/1.10/pics/add-ons$Internet_Meme_Era$images$";
 		} else if (this.props.icon.split("$")[0] === "demons") {
 			URL = "http://units.wesnoth.org/1.10/pics/add-ons$After_the_Storm$images$units$";

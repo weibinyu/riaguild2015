@@ -1,0 +1,18 @@
+{
+    "name": "Alexandra Seppänen",
+    "github": "as223jx",
+    "projectrepo": "",
+    "projectdesc": "",
+    "slack": "as223jx",
+    "presentation": "Hello! My name is Alexandra, and picking an icon for this thing took me longer than any other task in this course so far. Not sure what that says about me.",
+    "icon": "merfolk$siren",
+    "blogposts": [
+        {
+            "when": "2015-11-03 20:26",
+            "url": "https://github.com/as223jx/2DV607/blob/gh-pages/blog/entry01.md",
+            "title": "Entry 01"
+        }
+    ],
+    "pullrequests": [
+    ]
+}
