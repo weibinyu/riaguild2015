@@ -36,12 +36,12 @@ var _ = require("lodash");
 
 // add id and received pull requests to each member
 members = _.reduce(members,function(ret,data,id){
-	_.each(data.pullrequests || [],function(pr,n){
+	_.each(data.pullrequests || [],function(pr,n){
 		var target = (pr.url.match("^https:\/\/github\.com\/([^\/]*)\/") || [])[1];
 		pr.by = id;
 		if (ret[target]){
 			ret[id].pullrequests[n].target = target;
-			ret[target].received = (ret[target].received || []).concat(pr);
+			ret[target].received = (ret[target].received || []).concat(pr);
 		} else {
 			console.log(id,"Unknown PR target",target);
 		}
