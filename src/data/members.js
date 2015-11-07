@@ -25,10 +25,10 @@ var members = {
 	as223jx: require("./users/as223jx.json"),
 	swoot1: require("./users/swoot1.json"),
 	EleonorL: require("./users/EleonorL.json"),
-    	ViktorJ: require("./users/ViktorJ.json"),
-    	Eldraev: require("./users/Eldraev.json"),
+    ViktorJ: require("./users/ViktorJ.json"),
+    Eldraev: require("./users/Eldraev.json"),
 	bc222az: require("./users/bc222az.json"),
-    	js22gz: require("./users/js22gz.json"),
+    js22gz: require("./users/js22gz.json"),
 	diggo16: require("./users/diggo16.json"), 
 	Janste: require("./users/Janste.json"),
 };
