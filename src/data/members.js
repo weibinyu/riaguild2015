@@ -19,7 +19,7 @@ module.exports = {
 	Pajn: require("./users/Pajn.json"),
 	ek222mw: require("./users/ek222mw.json"),
 	me222rs: require("./users/me222rs.json"),
-	angamanga: require("./users/Angamanga.json")
+	Angamanga: require("./users/Angamanga.json")
 	
 };
 t
