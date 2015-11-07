@@ -1,0 +1,18 @@
+{
+    "name": "Jan Steczko",
+    "github": "Janste",
+    "projectrepo": "n/a",
+    "projectdesc": "n/a",
+    "slack": "jansteczko",
+    "presentation": "A student at LNU from Vaxjo.",
+    "icon": "dwarves$gryphon-master",
+    "blogposts": [
+        {
+            "when": "2015-11-07 11:35",
+            "url": "https://github.com/Janste/RIA-Development-with-Javascript/blob/master/blog/entry01.md",
+            "title": "Introduction"
+        }
+    ],
+    "pullrequests": [
+    ]
+}
