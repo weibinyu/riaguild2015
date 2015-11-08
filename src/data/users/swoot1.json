@@ -31,6 +31,11 @@
 			"when": "2015-11-08 17:03",
 			"url": "https://github.com/Swoot1/ria2015/blob/gh-pages/blog/2015-11-08-when-you-mess-up-your-fork.markdown",
 			"title": "When you mess up your fork"
+		},
+        {
+			"when": "2015-11-08 21:43",
+			"url": "https://github.com/Swoot1/ria2015/blob/gh-pages/blog/2015-11-08-added-watches.markdown",
+			"title": "Watch .css and .js files"
 		}
 	],
 	"pullrequests": []
