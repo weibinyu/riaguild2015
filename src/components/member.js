@@ -10,7 +10,7 @@ var Member = React.createClass({
 	render: function(){
 		var data = members[this.props.params.name],
 			posts = data.blogposts.map(function(post,n){
-				return <li key={n}><a target="_blank" href={post.url}>{post.title+" ("+post.when+")"}</a></li>;
+				return <li key={n}><a target="_blank" href={post.url}>{post.title+" ("+post.when+(post.sageadvice ? ", sage advice!":"")+")"}</a></li>;
 			}),
 			pullrequests = (data.pullrequests || []).map(function(pr,n){
 				var targetuser = members[pr.target];
@@ -42,9 +42,9 @@ var Member = React.createClass({
 				{data.projectrepo && (
 					<div>
 						<h3>Project</h3>
-						{data.projectdesc+" "} 
+						{(data.projectdesc || "<no description given>")+" "} 
 						  (<a href={"http://github.com/"+data.github+"/"+data.projectrepo}>code</a>) 
-						  (<a href={"http://"+data.github+".github.io/"+data.projectrepo}>run</a>) 
+						  (<a href={"http://"+data.github+".github.io/"+data.projectrepo+"/"+(data.projectentry||"")}>run</a>) 
 					</div>
 				)}
 				<h3>Blog posts:</h3>

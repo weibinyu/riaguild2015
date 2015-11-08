@@ -1,8 +1,8 @@
 {
 	"name": "Mattias Wikström",
 	"github": "mw222rs",
-	"projectrepo": "",
-	"projectdesc": "",
+	"projectrepo": "itendsinspace",
+	"projectdesc": "It's your choice.",
 	"slack": "mattiaswikstroem",
 	"presentation": "28 year old person.",
 	"icon": "ninjas$sumo",
@@ -11,6 +11,11 @@
 			"when": "2015-11-02 16:59",
 			"url": "http://mattias.rocks/my-respiration-and-inspiration/",
 			"title": "Song of Myself"
+		},
+		{
+			"when": "2015-11-05 23:45:29",
+			"url": "http://mattias.rocks/using-eslint-to-lint-your-react-code/",
+			"title": "Linting your React code with ESLint"
 		}
 	],
 	"pullrequests": [
