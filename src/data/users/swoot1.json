@@ -11,7 +11,27 @@
 			"when": "2015-11-03 21:20",
 			"url": "https://github.com/Swoot1/ria2015/blob/master/blog/2015-11-03-presentation.markdown",
 			"title": "Presentation"
-		}
+		},
+        {
+			"when": "2015-11-08 17:00",
+			"url": "https://github.com/Swoot1/ria2015/blob/gh-pages/blog/2015-11-08-the-script-tag.markdown",
+			"title": "The script tag in package.json"
+		},
+        {
+			"when": "2015-11-08 17:01",
+			"url": "https://github.com/Swoot1/ria2015/blob/gh-pages/blog/2015-11-08-es6.markdown",
+			"title": "ECMAScript6"
+		},
+        {
+			"when": "2015-11-08 17:02",
+			"url": "https://github.com/Swoot1/ria2015/blob/gh-pages/blog/2015-11-08-syncing-fork.markdown",
+			"title": "How do I sync my fork with the riaguild2015?"
+		},
+        {
+			"when": "2015-11-08 17:03",
+			"url": "https://github.com/Swoot1/ria2015/blob/gh-pages/blog/2015-11-08-when-you-mess-up-your-fork.markdown",
+			"title": "When you mess up your fork"
+		},
 	],
 	"pullrequests": []
 }
