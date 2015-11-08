@@ -20,6 +20,7 @@ var Roster = React.createClass({
 		});
 		return (
 			<div>
+				<p>These are the {rows.length} members of the RIA guild:</p>
 				<table>
 					<thead>
 						<tr><th>Name</th><th>Posts</th><th>PR:s</th></tr>

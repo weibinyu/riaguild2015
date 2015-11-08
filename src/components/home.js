@@ -1,9 +1,6 @@
 
 var React = require("react"),
-	_ = require("lodash"),
-	members = require("../data/members").members,
-	Icon = require("./icon"),
-	markdown = require("markdown").markdown;
+	Heroes = require("./heroes");
 
 var Home = React.createClass({
 	render: function(){
@@ -16,6 +13,8 @@ This is the student roster for the <a href="https://coursepress.lnu.se/kurs/ria-
 				<p>
 The purpose of the guild is to easily find the classmates' projects, and also see their blog posts and pull requests.
 				</p>
+				<h3>Heroes</h3>
+				<Heroes />
 			</div>
 		);
 	}

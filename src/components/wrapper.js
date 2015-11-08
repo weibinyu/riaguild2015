@@ -17,6 +17,7 @@ var Wrapper = React.createClass({
                 	<li><IndexLink activeClassName="active" to="/">Home</IndexLink></li>
                 	<li><Link activeClassName="active" to="/members/">Roster</Link></li>
                 	<li><Link activeClassName="active" to="/actions/">Deeds</Link></li>
+                    <li><Link activeClassName="active" to="/advice/">Advice</Link></li>
                 	<li><Link activeClassName="active" to="/gallery/">Gallery</Link></li>
                 </ul>
                 {this.props.children}
