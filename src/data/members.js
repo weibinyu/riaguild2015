@@ -55,7 +55,15 @@ members = _.reduce(members,function(ret,data,id){
 
 // fix sage advice;
 
-var sageadvice = [ ["uf222ba",1], ["afrxx09",1], ["Pajn",2], ["mw222rs",1], ["drager",3], ["mw222rs",2] ] // David's divine opinion :P
+var sageadvice = [
+	["uf222ba",1],
+	["afrxx09",1],
+	["Pajn",2],
+	["mw222rs",1],
+	["drager",3],
+	["mw222rs",2],
+	["swoot1",2]
+] // David's divine opinion :P
 
 members = _.mapValues(members,function(data){
 	var filtered = sageadvice.filter(function(i){ return i[0] === data.id; }),
