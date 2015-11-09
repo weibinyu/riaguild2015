@@ -32,6 +32,7 @@ var members = {
 	diggo16: require("./users/diggo16.json"), 
 	Janste: require("./users/Janste.json"),
 	as223my: require("./users/as223my.json"),
+	mattiaslj: require("./users/mattiaslj.json"),
 };
 
 var _ = require("lodash");
