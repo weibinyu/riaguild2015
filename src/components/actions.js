@@ -11,8 +11,17 @@ function ordernum(n){
 }
 
 var Actions = React.createClass({
+	nameFilterFunction: () => true,
+
+	getInitialState: function() {
+		return { filterName: "" };
+	},
+	handleNameFilterChange: function(event) {
+		this.setState({ filterName: event.target.value });
+		this.nameFilterFunction = (info) => { return members[info.by].name.slice(0, this.state.filterName.length).toUpperCase() == this.state.filterName.toUpperCase(); }
+	},
 	render: function(){
-		var rows = _.map(actions,function(info,id){
+		var rows = _.map(actions.filter(this.nameFilterFunction),function(info,id){
 			var user = members[info.by],
 				tuser = members[info.target];
 			return (
@@ -31,6 +40,7 @@ var Actions = React.createClass({
 		return (
 			<div>
 				<p>There's been {mem.numberofposts} posts and {mem.numberofprs} pull requests so far:</p>
+				<input type="text" placeholder="Filter..." value={this.state.filterName} onChange={this.handleNameFilterChange} />
 				<table>
 					<thead>
 						<tr><th>Who</th><th>When</th><th>What</th><th>Target (if PR)</th></tr>
