@@ -58,10 +58,10 @@ members = _.reduce(members,function(ret,data,id){
 var sageadvice = [
 	["afrxx09",1], // Andreas, Redux example
 	["Pajn",2], // Rasmus, CI
-	["mw222rs",1], // Mattias W, ESLint
 	["drager",3], // Jesper, TypeScript
-	["mw222rs",2], // Mattias W, Sublime
+	["mw222rs",1], // Mattias W, ESLint
 	["swoot1",2] // Elin, ES6
+	["mw222rs",2], // Mattias W, Sublime
 ] // David's divine opinion :P
 
 members = _.mapValues(members,function(data){
