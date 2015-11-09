@@ -55,7 +55,7 @@ members = _.reduce(members,function(ret,data,id){
 
 // fix sage advice;
 
-var sageadvice = [ ["uf222ba",1], ["afrxx09",1], ["Pajn",2], ["mw222rs",1], ["drager",3] ] // David's divine opinion :P
+var sageadvice = [ ["uf222ba",1], ["afrxx09",1], ["Pajn",2], ["mw222rs",1], ["drager",3], ["mw222rs",2] ] // David's divine opinion :P
 
 members = _.mapValues(members,function(data){
 	var filtered = sageadvice.filter(function(i){ return i[0] === data.id; }),
@@ -111,7 +111,7 @@ var heroes = _.reduce(members,function(ret,user){
 	});
 },{blogposts:[0,[]],pullrequests:[0,[]],sageadvice:[0,[]]});
 
-console.log("MEMBERS",members);
+//console.log("MEMBERS",members);
 
 module.exports = {
 	members: members,
