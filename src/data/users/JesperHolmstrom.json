@@ -1,7 +1,7 @@
 {
     "name": "Jesper Holmström",
     "github": "JesperHolmstrom",
-    "projectrepo": "https://github.com/JesperHolmstrom/riaguild2015",
+    "projectrepo": "RIA_project",
     "projectdesc": "A small project to try out React/Redux. Code stolen shamelessly from Andreas Fridlund's example.",
     "slack": "jesperholmstrom",
     "presentation": "25 year old guy from Värnamo, currently living in Växjö where I am studying Software Technology.",
