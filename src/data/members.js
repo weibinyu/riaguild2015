@@ -60,9 +60,9 @@ var sageadvice = [
 	["Pajn",2], // Rasmus, CI
 	["drager",3], // Jesper, TypeScript
 	["mw222rs",1], // Mattias W, ESLint
-	["swoot1",2] // Elin, ES6
-	["mw222rs",2], // Mattias W, Sublime
-] // David's divine opinion :P
+	["swoot1",2], // Elin, ES6
+	["mw222rs",2] // Mattias W, Sublime
+]; // David's divine opinion :P
 
 members = _.mapValues(members,function(data){
 	var filtered = sageadvice.filter(function(i){ return i[0] === data.id; }),
