@@ -16,6 +16,11 @@
 			"when": "2015-11-05 23:45:29",
 			"url": "http://mattias.rocks/using-eslint-to-lint-your-react-code/",
 			"title": "Linting your React code with ESLint"
+		},
+		{
+			"when": "2015-11-09 00:22:17",
+			"url": "http://mattias.rocks/setting-up-sublime/",
+			"title": "Setting up Sublime Text for React developmentt"
 		}
 	],
 	"pullrequests": [
