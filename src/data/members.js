@@ -56,13 +56,12 @@ members = _.reduce(members,function(ret,data,id){
 // fix sage advice;
 
 var sageadvice = [
-	["uf222ba",1],
-	["afrxx09",1],
-	["Pajn",2],
-	["mw222rs",1],
-	["drager",3],
-	["mw222rs",2],
-	["swoot1",2]
+	["afrxx09",1], // Andreas, Redux example
+	["Pajn",2], // Rasmus, CI
+	["mw222rs",1], // Mattias W, ESLint
+	["drager",3], // Jesper, TypeScript
+	["mw222rs",2], // Mattias W, Sublime
+	["swoot1",2] // Elin, ES6
 ] // David's divine opinion :P
 
 members = _.mapValues(members,function(data){
