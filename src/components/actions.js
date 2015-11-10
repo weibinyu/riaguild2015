@@ -11,17 +11,38 @@ function ordernum(n){
 }
 
 var Actions = React.createClass({
-	nameFilterFunction: () => true,
-
+	nameFilterFunction: function(info) {
+		return members[info.by].name.toUpperCase().indexOf(this.state.filterName.toUpperCase()) > -1;
+	},
+	whatFilterFunction: function(info) {
+		return info.description.toUpperCase().indexOf(this.state.filterWhat.toUpperCase()) > -1;
+	},
+	typeFilterFunction: () => true,
 	getInitialState: function() {
-		return { filterName: "" };
+		return { filterName: "", filterWhat: "" };
 	},
 	handleNameFilterChange: function(event) {
 		this.setState({ filterName: event.target.value });
-		this.nameFilterFunction = (info) => { return members[info.by].name.slice(0, this.state.filterName.length).toUpperCase() == this.state.filterName.toUpperCase(); }
+	},
+	handleWhatFilterChange: function(event) {
+		this.setState({ filterWhat: event.target.value });
+	},
+	setTypeFilterFunction: function(filterBy) {
+		switch (filterBy) {
+			case 'posts':
+				this.typeFilterFunction = (info) => { return info.type === "post" };
+				break;
+			case 'prs':
+				this.typeFilterFunction = (info) => { return info.type === "pr" };
+				break;
+			default:
+				this.typeFilterFunction = () => true;
+				break;
+		}
+		this.forceUpdate();
 	},
 	render: function(){
-		var rows = _.map(actions.filter(this.nameFilterFunction),function(info,id){
+		var rows = _.map(actions.filter(this.nameFilterFunction).filter(this.whatFilterFunction).filter(this.typeFilterFunction),function(info,id){
 			var user = members[info.by],
 				tuser = members[info.target];
 			return (
@@ -40,10 +61,33 @@ var Actions = React.createClass({
 		return (
 			<div>
 				<p>There's been {mem.numberofposts} posts and {mem.numberofprs} pull requests so far:</p>
-				<input type="text" placeholder="Filter..." value={this.state.filterName} onChange={this.handleNameFilterChange} />
 				<table>
 					<thead>
 						<tr><th>Who</th><th>When</th><th>What</th><th>Target (if PR)</th></tr>
+						<tr>
+							<th><input type="text" placeholder="Filter..." value={this.state.filterName} onChange={this.handleNameFilterChange} /></th>
+							<th></th>
+							<th><input type="text" placeholder="Filter..." value={this.state.filterWhat} onChange={this.handleWhatFilterChange} /></th>
+							<th></th>
+						</tr>
+						<tr>
+							<th colSpan="4">
+								<form>
+									<label>
+										Show all
+										<input type="radio" name="filter" defaultChecked onClick={ this.setTypeFilterFunction.bind(this, "all") } />
+									</label>
+									<label>
+										Show posts
+										<input type="radio" name="filter" onClick={ this.setTypeFilterFunction.bind(this, "posts") } />
+									</label>
+									<label>
+										Show PR:s
+										<input type="radio" name="filter" onClick={ this.setTypeFilterFunction.bind(this, "prs") } />
+									</label>
+								</form>
+							</th>
+						</tr>
 					</thead>
 					<tbody>
 						{rows}
