@@ -22,6 +22,11 @@
       	"url": "https://rasmus.eneman.eu/continuous-integration-and-deployment-to-gh-pages/",
       	"title": "Continuous Integration and Deployment to gh-pages"
       },
+      {
+      	"when": "2015-11-10 22:33",
+      	"url": "https://rasmus.eneman.eu/the-dark-spots-in-typescript/",
+      	"title": "The dark spots in Typescript"
+      },
     ],
     "pullrequests": [
     ]
