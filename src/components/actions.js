@@ -17,9 +17,18 @@ var Actions = React.createClass({
 	whatFilterFunction: function(info) {
 		return info.description.toUpperCase().indexOf(this.state.filterWhat.toUpperCase()) > -1;
 	},
-	typeFilterFunction: () => true,
+	typeFilterFunction: function(info) {
+		switch (this.state.filterType) {
+			case "posts":
+				return info.type === "post";
+			case "prs":
+				return info.type === "pr";
+			default:
+				return true;
+		}
+	},
 	getInitialState: function() {
-		return { filterName: "", filterWhat: "" };
+		return { filterName: "", filterWhat: "", filterType: "all" };
 	},
 	handleNameFilterChange: function(event) {
 		this.setState({ filterName: event.target.value });
@@ -27,19 +36,8 @@ var Actions = React.createClass({
 	handleWhatFilterChange: function(event) {
 		this.setState({ filterWhat: event.target.value });
 	},
-	setTypeFilterFunction: function(filterBy) {
-		switch (filterBy) {
-			case 'posts':
-				this.typeFilterFunction = (info) => { return info.type === "post" };
-				break;
-			case 'prs':
-				this.typeFilterFunction = (info) => { return info.type === "pr" };
-				break;
-			default:
-				this.typeFilterFunction = () => true;
-				break;
-		}
-		this.forceUpdate();
+	handleTypeFilterChange: function(filterBy) {
+		this.setState({ filterType: filterBy });
 	},
 	render: function(){
 		var rows = _.map(actions.filter(this.nameFilterFunction).filter(this.whatFilterFunction).filter(this.typeFilterFunction),function(info,id){
@@ -75,15 +73,15 @@ var Actions = React.createClass({
 								<form>
 									<label>
 										Show all
-										<input type="radio" name="filter" defaultChecked onClick={ this.setTypeFilterFunction.bind(this, "all") } />
+										<input type="radio" name="filter" defaultChecked onClick={ this.handleTypeFilterChange.bind(this, "all") } />
 									</label>
 									<label>
 										Show posts
-										<input type="radio" name="filter" onClick={ this.setTypeFilterFunction.bind(this, "posts") } />
+										<input type="radio" name="filter" onClick={ this.handleTypeFilterChange.bind(this, "posts") } />
 									</label>
 									<label>
 										Show PR:s
-										<input type="radio" name="filter" onClick={ this.setTypeFilterFunction.bind(this, "prs") } />
+										<input type="radio" name="filter" onClick={ this.handleTypeFilterChange.bind(this, "prs") } />
 									</label>
 								</form>
 							</th>
