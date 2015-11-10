@@ -10,35 +10,30 @@ var React = require("react"),
 
 var Gallery = React.createClass({
     
-    iconFilterFunction: () => true,
-    
     getInitialState:function(){
-        return {iconBoxesHTML : this.getIconBoxesHTML()};
-    },
-    
-    updateIconBoxesWithFilter: function(filterOn){
-        this.setIconFilterFunction(filterOn);
-        this.setState({iconBoxesHTML: this.getIconBoxesHTML()});
+        return {
+            iconFilterFunction: () => true
+        };
     },
     
     setIconFilterFunction: function(filterOn){
     
         switch(filterOn){
             case 'taken':
-                this.iconFilterFunction = (icon) => { return usedicons.hasOwnProperty(icon); };
+                this.setState({iconFilterFunction: (icon) => { return usedicons.hasOwnProperty(icon);}});
                 break;
             case 'available':
-                this.iconFilterFunction = (icon) => { return usedicons.hasOwnProperty(icon) === false; };
+                this.setState({iconFilterFunction: (icon) => { return usedicons.hasOwnProperty(icon) === false;}});
                 break;
             default:
-                this.iconFilterFunction = () => true;
+                this.setState({iconFilterFunction: () => true});
                 break;
         }
     },
         
     getIconBoxesHTML: function(){
         
-        return icons.filter(this.iconFilterFunction).map(function(icon,n){
+        return icons.filter(this.state.iconFilterFunction).map(function(icon,n){
 
             return (
                 <span key={n} className={usedicons[icon]?"icon chosen":"icon"}>
@@ -60,18 +55,18 @@ var Gallery = React.createClass({
                 <form>
                     <label>
                         Show all
-                        <input type="radio" name="icon-filter" defaultChecked onClick={this.updateIconBoxesWithFilter.bind(this, 'all')}/>
+                        <input type="radio" name="icon-filter" defaultChecked onClick={this.setIconFilterFunction.bind(this, 'all')}/>
                     </label>
                     <label>
                         Show taken
-                        <input type="radio" name="icon-filter" onClick={this.updateIconBoxesWithFilter.bind(this, 'taken')}/>
+                        <input type="radio" name="icon-filter" onClick={this.setIconFilterFunction.bind(this, 'taken')}/>
                     </label>
                     <label>
                         Show available
-                        <input type="radio" name="icon-filter" onClick={this.updateIconBoxesWithFilter.bind(this, 'available')}/>
+                        <input type="radio" name="icon-filter" onClick={this.setIconFilterFunction.bind(this, 'available')}/>
                     </label>
                 </form>
-                <div className="iconboxes">{this.state.iconBoxesHTML}</div>
+                <div className="iconboxes">{this.getIconBoxesHTML()}</div>
             </div>
         );
     }
