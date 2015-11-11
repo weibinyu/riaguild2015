@@ -29,10 +29,11 @@ var members = {
     Eldraev: require("./users/Eldraev.json"),
 	bc222az: require("./users/bc222az.json"),
     js22gz: require("./users/js22gz.json"),
-	diggo16: require("./users/diggo16.json"), 
+	diggo16: require("./users/diggo16.json"),
 	Janste: require("./users/Janste.json"),
 	as223my: require("./users/as223my.json"),
 	mattiaslj: require("./users/mattiaslj.json"),
+	ea222pu: require("./users/ea222pu.json")
 };
 
 var _ = require("lodash");
