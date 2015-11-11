@@ -59,7 +59,7 @@ var Actions = React.createClass({
 		return (
 			<div>
 				<p>There's been {mem.numberofposts} posts and {mem.numberofprs} pull requests so far:</p>
-				<table>
+				<table className="table table-striped">
 					<thead>
 						<tr><th>Who</th><th>When</th><th>What</th><th>Target (if PR)</th></tr>
 						<tr>
