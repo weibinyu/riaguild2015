@@ -60,6 +60,7 @@ var sageadvice = [
 	["Pajn",2], // Rasmus, CI
 	["drager",3], // Jesper, TypeScript
 	["mw222rs",1], // Mattias W, ESLint
+	["swoot1",1], // Elin, build script
 	["swoot1",2], // Elin, ES6
 	["mw222rs",2] // Mattias W, Sublime
 ]; // David's divine opinion :P
