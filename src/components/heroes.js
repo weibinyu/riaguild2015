@@ -11,9 +11,9 @@ var Heroes = React.createClass({
 		return (
 			<div>
 				<p>These are the current heroes of the guild. Make sure to pay them proper reverence in the Slack channel!</p>
-				<table>
+				<table className="table table-striped">
 					<thead>
-						<tr><th>What</th><th>Who</th></tr>
+						<tr><th style={{width: 25+"%"}}>What</th><th>Who</th></tr>
 					</thead>
 					<tbody>
 						<tr>

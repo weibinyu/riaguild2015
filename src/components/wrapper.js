@@ -9,21 +9,21 @@ var React = require('react'),
 	IndexLink = Router.IndexLink;
 
 var Wrapper = React.createClass({
-    render: function() {
-        return (
-            <div className="wrapper">
-                <h2>RIA course member guild 2015</h2>
-                <ul className="nav">
-                	<li><IndexLink activeClassName="active" to="/">Home</IndexLink></li>
-                	<li><Link activeClassName="active" to="/members/">Roster</Link></li>
-                	<li><Link activeClassName="active" to="/actions/">Deeds</Link></li>
-                    <li><Link activeClassName="active" to="/advice/">Advice</Link></li>
-                	<li><Link activeClassName="active" to="/gallery/">Gallery</Link></li>
-                </ul>
-                {this.props.children}
-            </div>
-        );
-    }
+	render: function() {
+		return (
+			<div className="wrapper">
+				<h2>RIA course member guild 2015</h2>
+				<ul className="nav">
+					<li><IndexLink activeClassName="active" to="/">Home</IndexLink></li>
+					<li><Link activeClassName="active" to="/members/">Roster</Link></li>
+					<li><Link activeClassName="active" to="/actions/">Deeds</Link></li>
+					<li><Link activeClassName="active" to="/advice/">Advice</Link></li>
+					<li><Link activeClassName="active" to="/gallery/">Gallery</Link></li>
+				</ul>
+				{this.props.children}
+			</div>
+		);
+	}
 });
 
 module.exports = Wrapper;
