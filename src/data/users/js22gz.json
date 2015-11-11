@@ -1,0 +1,18 @@
+{
+    "name": "Jonatan Skäryd",
+    "github": "js22gz",
+    "projectrepo": "2DV607",
+    "projectdesc": "No direction yet",
+    "slack": "jonatan.skaryd",
+    "presentation": "31 year old teacher from Kalmar. Knowing only basics of Javascript I'm eager to get going in this course",
+    "icon": "human-loyalists$master-at-arms",
+    "blogposts": [
+        {
+            "when": "2015-11-04 19:00",
+            "url": "https://github.com/js22gz/2DV607/blob/master/blog/entry01.md",
+            "title": "Introduction"
+        }
+    ],
+    "pullrequests": [
+    ]
+}
