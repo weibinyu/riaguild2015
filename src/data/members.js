@@ -33,7 +33,7 @@ var members = {
 	Janste: require("./users/Janste.json"),
 	as223my: require("./users/as223my.json"),
 	mattiaslj: require("./users/mattiaslj.json"),
-	ea222pu: require("./users/ea222pu.json")
+	ea222pu: require("./users/ea222pu.json"),
 	weibinyu: require("./users/weibinyu.json")
 };
 
