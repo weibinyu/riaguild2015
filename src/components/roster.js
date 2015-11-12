@@ -20,9 +20,10 @@ var Roster = React.createClass({
 		});
 		return (
 			<div>
-				<table>
+				<p>These are the {rows.length} members of the RIA guild:</p>
+				<table className="table table-striped">
 					<thead>
-						<tr><th>Name</th><th>Posts</th><th>PR:s</th></tr>
+						<tr><th style={{width: 25+"%"}}>Name</th><th style={{width: 25+"%"}}>Posts</th><th>PR:s</th></tr>
 					</thead>
 					<tbody>
 						{rows}

@@ -1,7 +1,7 @@
 {
     "name": "Andreas Fridlund",
     "github": "afrxx09",
-    "projectrepo": "",
+    "projectrepo": "https://github.com/afrxx09/2dv607-project",
     "projectdesc": "",
     "slack": "andreasfridlund",
     "presentation": "30 y-o Växjö-lad living in Kalmar.",
@@ -11,6 +11,11 @@
             "when": "2015-11-02 12:30",
             "url": "http://afrxx09.blogspot.se/2015/11/whois.html",
             "title": "whois"
+        },
+        {
+            "when": "2015-11-04 16:00",
+            "url": "http://afrxx09.blogspot.se/2015/11/simple-react-redux-example.html",
+            "title": "Simple React Redux example"
         }
     ],
     "pullrequests": [
