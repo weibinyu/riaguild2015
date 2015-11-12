@@ -10,7 +10,8 @@ var Badge = React.createClass({
 			surnameletters = {
 				David: 1,
 				Jesper: 2,
-				Mattias: 1
+				Mattias: 1,
+				Emil: 1
 			}[names[0]];
 		return (
 			<span className="badge">
