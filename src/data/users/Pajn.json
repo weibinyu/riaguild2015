@@ -29,5 +29,10 @@
       },
     ],
     "pullrequests": [
+      {
+        "when": "2015-11-13 15:50",
+        "url": "https://github.com/drager/cetti/pull/15",
+        "description": "feat: Add initial dashboard component"
+      },
     ]
 }
