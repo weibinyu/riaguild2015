@@ -1,7 +1,8 @@
 {
     "name": "Joakim Nilsson",
     "github": "jn222na",
-    "projectrepo": "",
+    "projectrepo": "RIA",
+    "projectentry": "hello-world",
     "projectdesc": "",
     "slack": "exils",
     "presentation": "22 year old from Öland/Kalmar, moba gamer(DOTA<3)",
@@ -9,9 +10,14 @@
     "blogposts": [
         {
             "when": "2015-11-02 14:04",
-            "url": "https://github.com/jn222na/blog/blob/master/entry01.md",
-            "title": "Blog page"
-        }
+            "url": "https://github.com/jn222na/RIA/blob/master/blog/entry01.md",
+            "title": "Introduction"
+        },
+        {
+    		"when": "2015-11-03 17:12",
+            "url": "https://github.com/jn222na/RIA/blob/master/blog/entry02-Hello-world.md",
+            "title": "Hello world app"
+    	},
     ],
     "pullrequests": [
     ]
