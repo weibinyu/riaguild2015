@@ -16,6 +16,11 @@
             "when": "2015-11-04 16:00",
             "url": "http://afrxx09.blogspot.se/2015/11/simple-react-redux-example.html",
             "title": "Simple React Redux example"
+        },
+        {
+            "when": "2015-11-13 14:47",
+            "url": "http://afrxx09.blogspot.se/2015/11/mostly-idle.html",
+            "title": "Mostly idle, but one guild bugfix"
         }
     ],
     "pullrequests": [
