@@ -1,0 +1,16 @@
+{
+	"name": "Christoffer Holmgren",
+	"github": "ch222kv",
+	"slack": "christofferholmgren",
+	"presentation": "21 year old from Falun. I'm not usually late! :)",
+	"icon": "merfolk$hunter",
+	"blogposts": [
+		{
+			"when": "2015-11-13 18:31",
+			"url": "https://github.com/ch222kv/ria-2015/blob/master/blog/entry01.md",
+			"title": "Introduction" 
+		}
+	],
+	"pullrequests": [
+	]
+}
