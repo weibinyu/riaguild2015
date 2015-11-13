@@ -35,7 +35,8 @@ var members = {
 	mattiaslj: require("./users/mattiaslj.json"),
 	ea222pu: require("./users/ea222pu.json"),
 	weibinyu: require("./users/weibinyu.json"),
-	carlpagelsLNU: require("./users/carlpagelsLNU.json")
+	carlpagelsLNU: require("./users/carlpagelsLNU.json"),
+	GamingCrewX: require("./users/GamingCrewX.json")
 };
 
 var _ = require("lodash");
