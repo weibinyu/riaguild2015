@@ -41,6 +41,11 @@
 			"when": "2015-11-14 16:37",
 			"url": "https://github.com/Swoot1/ria2015/blob/gh-pages/blog/2015-11-14-active-menu-item-in-react-bootstrap.markdown",
 			"title": "Active menu item in react-bootstrap"
+		},
+        {
+			"when": "2015-11-14 19:32",
+			"url": "https://github.com/Swoot1/ria2015/blob/gh-pages/blog/2015-11-14-static-and-the-difference-between-props-and-state.markdown",
+			"title": "Static and the difference between props and state"
 		}
 	],
 	"pullrequests": [
