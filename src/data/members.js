@@ -5,7 +5,7 @@ Check users/krawaller.json for an example on what your file should look like!
 
 var members = {
 	krawaller: require("./users/krawaller.json"),
-	Dagashi: require("./users/Dagashi.json"),
+	Dagashi: require("./users/dagashi.json"),
 	OskarKlintrot: require("./users/OskarKlintrot.json"),
 	MoombaDS: require("./users/MoombaDS.json"),
 	uf222ba: require("./users/uf222ba.json"),
@@ -35,7 +35,8 @@ var members = {
 	mattiaslj: require("./users/mattiaslj.json"),
 	ea222pu: require("./users/ea222pu.json"),
 	weibinyu: require("./users/weibinyu.json"),
-	carlpagelsLNU: require("./users/carlpagelsLNU.json")
+	carlpagelsLNU: require("./users/carlpagelsLNU.json"),
+	GamingCrewX: require("./users/GamingCrewX.json")
 };
 
 var _ = require("lodash");

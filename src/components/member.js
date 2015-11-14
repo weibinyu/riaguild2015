@@ -13,7 +13,7 @@ var Member = React.createClass({
 				return <li key={n}><a target="_blank" href={post.url}>{post.title+" ("+post.when+(post.sageadvice ? ", sage advice!":"")+")"}</a></li>;
 			}),
 			pullrequests = (data.pullrequests || []).map(function(pr,n){
-				var targetuser = members[pr.target];
+				var targetuser = members[pr.target] || {github: null};
 				return (
 					<tr key={n}>
 						<td><Badge id={targetuser.github} /></td>

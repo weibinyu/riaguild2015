@@ -42,7 +42,7 @@ var Actions = React.createClass({
 	render: function(){
 		var rows = _.map(actions.filter(this.nameFilterFunction).filter(this.whatFilterFunction).filter(this.typeFilterFunction),function(info,id){
 			var user = members[info.by],
-				tuser = members[info.target];
+				tuser = members[info.target] || {github: null};
 			return (
 				<tr key={id}>
 					<td><Badge id={user.github} /></td>
@@ -52,7 +52,7 @@ var Actions = React.createClass({
 						<br/>
 						<a href={info.url} target="_blank">{info.description}</a>
 					</td>
-					<td>{info.target && <span><Badge id={tuser.github} /></span> || ""}</td>
+					<td>{info.type ==='pr' && <span><Badge id={tuser.github} /></span> || ""}</td>
 				</tr>
 			);
 		});
