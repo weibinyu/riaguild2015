@@ -4,36 +4,32 @@ var React = require("react"),
     icons = require("../data/icons.json"),
     Icon = require("./icon"),
     Badge = require("./badge"),
+    Navigation = require('react-router').Navigation,
     usedicons = _.reduce(members,function(ret,data,id){
         return Object.assign(ret,{[data.icon]:data.id});
     },{});
 
 var Gallery = React.createClass({
     
+    mixins: [Navigation],
+    
     getInitialState:function(){
         return {
-            iconFilterFunction: () => true
+            iconFilterFunction: () => true,
+            iconFilter: this.props.params.filter,
+            FILTER_AVAILABLE: 'available',
+            FILTER_TAKEN: 'taken',
+            FILTER_ALL: 'all'
         };
     },
     
-    setIconFilterFunction: function(filterOn){
-    
-        switch(filterOn){
-            case 'taken':
-                this.setState({iconFilterFunction: (icon) => { return usedicons.hasOwnProperty(icon);}});
-                break;
-            case 'available':
-                this.setState({iconFilterFunction: (icon) => { return usedicons.hasOwnProperty(icon) === false;}});
-                break;
-            default:
-                this.setState({iconFilterFunction: () => true});
-                break;
-        }
+    setIconFilter: function(iconFilter){
+        this.setState({iconFilter: iconFilter});
     },
         
-    getIconBoxesHTML: function(){
+    getIconBoxesHTML: function(iconFilterFunction){
         
-        return icons.filter(this.state.iconFilterFunction).map(function(icon,n){
+        return icons.filter(iconFilterFunction).map(function(icon,n){
 
             return (
                 <span key={n} className={usedicons[icon]?"icon chosen":"icon"}>
@@ -47,7 +43,27 @@ var Gallery = React.createClass({
         });
     },
     
+    redirectToFilter: function(filter){
+        this.props.history.pushState(null, '/gallery/' + filter);
+    },
+    
     render: function(){
+        var self = this;
+        
+        var iconFilterFunction =  function(filterOn){
+            switch(filterOn){
+                case 'taken':
+                    return (icon) => { return usedicons.hasOwnProperty(icon);};
+                    break;
+                case 'available':
+                    return (icon) => { return usedicons.hasOwnProperty(icon) === false;};
+                    break;
+                default:
+                    return () => true;
+                    break;
+            }
+            
+        }(this.props.params.filter);
         
         return (
             <div>
@@ -55,18 +71,18 @@ var Gallery = React.createClass({
                 <form>
                     <label>
                         Show all
-                        <input type="radio" name="icon-filter" defaultChecked onClick={this.setIconFilterFunction.bind(this, 'all')}/>
+                        <input type="radio" name="icon-filter" defaultChecked checked={this.state.iconFilter === this.state.FILTER_ALL} onChange={this.setIconFilter.bind(this, this.state.FILTER_ALL)} onClick={this.redirectToFilter.bind(this, this.state.FILTER_ALL)}/>
                     </label>
                     <label>
                         Show taken
-                        <input type="radio" name="icon-filter" onClick={this.setIconFilterFunction.bind(this, 'taken')}/>
+                        <input type="radio" name="icon-filter" checked={this.state.iconFilter === this.state.FILTER_TAKEN} onChange={this.setIconFilter.bind(this, this.state.FILTER_TAKEN)} onClick={this.redirectToFilter.bind(this, this.state.FILTER_TAKEN)}/>
                     </label>
                     <label>
                         Show available
-                        <input type="radio" name="icon-filter" onClick={this.setIconFilterFunction.bind(this, 'available')}/>
+                        <input type="radio" name="icon-filter" checked={this.state.iconFilter === this.state.FILTER_AVAILABLE} onChange={this.setIconFilter.bind(this, this.state.FILTER_AVAILABLE)} onClick={this.redirectToFilter.bind(this, this.state.FILTER_AVAILABLE)}/>
                     </label>
                 </form>
-                <div className="iconboxes">{this.getIconBoxesHTML()}</div>
+                <div className="iconboxes">{this.getIconBoxesHTML(iconFilterFunction)}</div>
             </div>
         );
     }
