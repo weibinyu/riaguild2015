@@ -52,10 +52,10 @@ var Gallery = React.createClass({
         
         var iconFilterFunction =  function(filterOn){
             switch(filterOn){
-                case 'taken':
+                case self.state.FILTER_TAKEN:
                     return (icon) => { return usedicons.hasOwnProperty(icon);};
                     break;
-                case 'available':
+                case self.state.FILTER_AVAILABLE:
                     return (icon) => { return usedicons.hasOwnProperty(icon) === false;};
                     break;
                 default:
