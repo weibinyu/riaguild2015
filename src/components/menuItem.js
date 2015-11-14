@@ -6,7 +6,7 @@ var MenuItem = React.createClass({
     render: function(){
 
     return (
-            <NavItem href={this.props.path} active={this.props.active}>{this.props.linkText}</NavItem>
+            <NavItem href={'#' + this.props.path} active={this.props.isActive}>{this.props.linkText}</NavItem>
         );
 	}
 });

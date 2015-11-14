@@ -15,29 +15,33 @@ var Menu = React.createClass({
             menuItems: [
                 {
                     key: 'home',
-                    path: '#/',
+                    path: '/',
                     linkText: 'Home',
                     isIndexLink: true
                 },
                 {
                     key: 'members',
-                    path: '#/members/',
-                    linkText: 'Roster'
+                    path: '/members/',
+                    linkText: 'Roster',
+                    isIndexLink: false
                 },
                 {
                     key: 'actions',
-                    path: '#/actions/',
-                    linkText: 'Deeds'
+                    path: '/actions/',
+                    linkText: 'Deeds',
+                    isIndexLink: false
                 },
                 {
                     key: 'advice',
-                    path: '#/advice/',
-                    linkText: 'Advice'
+                    path: '/advice/',
+                    linkText: 'Advice',
+                    isIndexLink: false
                 },
                 {
                     key: 'gallery',
-                    path: '#/gallery/',
-                    linkText: 'Gallery'
+                    path: '/gallery/',
+                    linkText: 'Gallery',
+                    isIndexLink: false
                 }
             ]
         }
@@ -45,9 +49,12 @@ var Menu = React.createClass({
     
 	render: function(){
         
-    var menuItems = this.props.menuItems.map(function(menuItem){
-        return React.createElement(MenuItem, menuItem);
-    });
+    var isActive,
+        self = this,
+        menuItems = this.props.menuItems.map(function(menuItem){
+            isActive = self.history.isActive(menuItem.path, {}, menuItem.isIndexLink); 
+            return React.createElement(MenuItem, _.merge({isActive: isActive}, menuItem))
+        });
         
     return (
             <NavBar>
