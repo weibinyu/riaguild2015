@@ -46,6 +46,11 @@
 			"when": "2015-11-14 19:32",
 			"url": "https://github.com/Swoot1/ria2015/blob/gh-pages/blog/2015-11-14-static-and-the-difference-between-props-and-state.markdown",
 			"title": "Static and the difference between props and state"
+		},
+        {
+			"when": "2015-11-14 21:37",
+			"url": "https://github.com/Swoot1/ria2015/blob/gh-pages/blog/2015-11-14-a-simple-redirect-how-hard-can-it-be.markdown",
+			"title": "A Simple Redirect, How Hard Can It Be"
 		}
 	],
 	"pullrequests": [
