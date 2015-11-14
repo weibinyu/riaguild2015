@@ -50,25 +50,23 @@ var Gallery = React.createClass({
     render: function(){
         
         return (
-            <div className="row">
-                <div className="col-sm-12">
-                    <p>These are the icons you can choose from, apart from the red ones as they are already taken!</p>
-                    <form>
-                        <label>
-                            Show all
-                            <input type="radio" name="icon-filter" defaultChecked onClick={this.setIconFilterFunction.bind(this, 'all')}/>
-                        </label>
-                        <label>
-                            Show taken
-                            <input type="radio" name="icon-filter" onClick={this.setIconFilterFunction.bind(this, 'taken')}/>
-                        </label>
-                        <label>
-                            Show available
-                            <input type="radio" name="icon-filter" onClick={this.setIconFilterFunction.bind(this, 'available')}/>
-                        </label>
-                    </form>
-                    <div className="iconboxes">{this.getIconBoxesHTML()}</div>
-                </div>
+            <div>
+                <p>These are the icons you can choose from, apart from the red ones as they are already taken!</p>
+                <form>
+                    <label>
+                        Show all
+                        <input type="radio" name="icon-filter" defaultChecked onClick={this.setIconFilterFunction.bind(this, 'all')}/>
+                    </label>
+                    <label>
+                        Show taken
+                        <input type="radio" name="icon-filter" onClick={this.setIconFilterFunction.bind(this, 'taken')}/>
+                    </label>
+                    <label>
+                        Show available
+                        <input type="radio" name="icon-filter" onClick={this.setIconFilterFunction.bind(this, 'available')}/>
+                    </label>
+                </form>
+                <div className="iconboxes">{this.getIconBoxesHTML()}</div>
             </div>
         );
     }

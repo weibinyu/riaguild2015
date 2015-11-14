@@ -10,11 +10,11 @@ td {
 	opacity: 0.6;
 }
 
-.member-badge {
+.badge {
 	position: relative;
 	margin-right: 10px;
 }
-p.member-badge-name {
+p.badge-name {
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -23,17 +23,12 @@ p.member-badge-name {
 	background-color: rgba(255, 255,255, .7);
 	font-size: 0.9em;
 }
-p.member-badge-name:hover {
+p.badge-name:hover {
 	color: #666;
 }
 
-<<<<<<< Updated upstream
 ul.nav > li > a.active {
 	font-weight: bold;
-=======
-/*ul.nav > li > a.active {
-    font-weight: bold;
->>>>>>> Stashed changes
 }
 ul.nav:after {
 	content: " ";
@@ -45,7 +40,6 @@ ul.nav li {
 	margin-left: 1em;
 }
 ul.nav {
-<<<<<<< Updated upstream
 	list-style-type: none;
 	-webkit-padding-start: 0;
 	background-color: #CCC;
@@ -58,9 +52,3 @@ form label input[type="radio"],
 form label input[type="checkbox"] {
 	margin-left: 5px;
 }
-=======
-    list-style-type: none;
-    -webkit-padding-start: 0;
-    background-color: #CCC;
-}*/
->>>>>>> Stashed changes
