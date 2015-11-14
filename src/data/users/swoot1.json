@@ -36,6 +36,11 @@
 			"when": "2015-11-08 21:43",
 			"url": "https://github.com/Swoot1/ria2015/blob/gh-pages/blog/2015-11-08-added-watches.markdown",
 			"title": "Watch .css and .js files"
+		},
+        {
+			"when": "2015-11-14 16:37",
+			"url": "https://github.com/Swoot1/ria2015/blob/gh-pages/blog/2015-11-14-active-menu-item-in-react-bootstrap.markdown",
+			"title": "Active menu item in react-bootstrap"
 		}
 	],
 	"pullrequests": [
