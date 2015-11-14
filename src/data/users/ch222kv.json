@@ -1,6 +1,8 @@
 {
 	"name": "Christoffer Holmgren",
 	"github": "ch222kv",
+	"projectrepo": "ria-2015",
+	"projectdesc": "Hello-world-app, hacking at the hero battler code base. Hopefully getting the hang of React+Redux+Router soon.",
 	"slack": "christofferholmgren",
 	"presentation": "21 year old from Falun. I'm not usually late! :)",
 	"icon": "merfolk$hunter",
@@ -12,5 +14,5 @@
 		}
 	],
 	"pullrequests": [
-	]
+	],
 }
