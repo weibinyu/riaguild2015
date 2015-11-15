@@ -8,20 +8,9 @@ var React = require("react"),
     usedicons = _.reduce(members,function(ret,data,id){
         return Object.assign(ret,{[data.icon]:data.id});
     },{}),
-    filters = [
-        {
-            filterName: FILTER_ALL,
-            labelText: 'Show all'
-        },
-        {
-            filterName: FILTER_AVAILABLE,
-            labelText: 'Show available'
-        },
-        {
-            filterName: FILTER_TAKEN,
-            labelText: 'Show taken'
-        }
-    ];
+    FILTER_ALL = 'all',
+    FILTER_TAKEN = 'taken',
+    FILTER_AVAILABLE = 'available';
 
 var Gallery = React.createClass({
     
@@ -30,8 +19,8 @@ var Gallery = React.createClass({
     getIconBoxesHTML: function(){
         
         var filterFunction = {
-                available: (icon) => { return usedicons.hasOwnProperty(icon) === false;},
-                taken: (icon) => { return usedicons.hasOwnProperty(icon);}
+                [FILTER_AVAILABLE]: (icon) => { return usedicons.hasOwnProperty(icon) === false;},
+                [FILTER_TAKEN]: (icon) => { return usedicons.hasOwnProperty(icon);}
             }[this.props.params.filter] || (() => true);
         
         return icons.filter(filterFunction).map(function(icon,n){
@@ -53,15 +42,22 @@ var Gallery = React.createClass({
     },
     
     getRenderButtonsHTML: function(){
-        return filters.map(function(filter, i){
+        
+        var labels = {
+            [FILTER_ALL]:"Show all",
+            [FILTER_AVAILABLE]:"Show available",
+            [FILTER_TAKEN]:"Show taken"
+        };
+        
+        return labels.map(function(labelText, filtername){
             return (
                 <label key={i}>
-                    {filter.labelText}
+                    {labelText}
                     <input 
                         type="radio" 
                         name="icon-filter" 
-                        checked={this.props.params.filter === filter.filterName} 
-                        onChange={this.redirectToFilter.bind(this, filter.filterName)}/>
+                        checked={this.props.params.filter === filtername} 
+                        onChange={this.redirectToFilter.bind(this, filtername)}/>
                 </label>);
         }, this);
     },
