@@ -4,13 +4,13 @@ var React = require("react"),
     icons = require("../data/icons.json"),
     Icon = require("./icon"),
     Badge = require("./badge"),
-    Navigation = require('react-router').Navigation,
+    Navigation = require("react-router").Navigation,
     usedicons = _.reduce(members,function(ret,data,id){
         return Object.assign(ret,{[data.icon]:data.id});
     },{}),
-    FILTER_ALL = 'all',
-    FILTER_TAKEN = 'taken',
-    FILTER_AVAILABLE = 'available';
+    FILTER_ALL = "all",
+    FILTER_TAKEN = "taken",
+    FILTER_AVAILABLE = "available";
 
 var Gallery = React.createClass({
     
@@ -38,7 +38,7 @@ var Gallery = React.createClass({
     },
     
     redirectToFilter: function(filter){
-        this.props.history.pushState(null, '/gallery/' + filter);
+        this.props.history.pushState(null, "/gallery/" + filter);
     },
     
     getRenderButtonsHTML: function(){
