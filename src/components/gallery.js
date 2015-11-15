@@ -15,9 +15,23 @@ var Gallery = React.createClass({
     
     getInitialState:function(){
         return {
-            FILTER_AVAILABLE: 'available',
-            FILTER_TAKEN: 'taken',
-            FILTER_ALL: 'all'
+            filters: [
+                {
+                    filterName: 'all',
+                    labelText: 'Show all',
+                    filterFunction: () => true,
+                },
+                {
+                    filterName: 'available',
+                    labelText: 'Show available',
+                    filterFunction: (icon) => { return usedicons.hasOwnProperty(icon) === false;}
+                },
+                {
+                    filterName: 'taken',
+                    labelText: 'Show taken',
+                    filterFunction: (icon) => { return usedicons.hasOwnProperty(icon);}
+                }
+            ]
         };
     },
  
@@ -44,39 +58,28 @@ var Gallery = React.createClass({
     render: function(){
         var self = this;
         
-        var iconFilterFunction =  function(filterOn){
-            switch(filterOn){
-                case self.state.FILTER_TAKEN:
-                    return (icon) => { return usedicons.hasOwnProperty(icon);};
-                    break;
-                case self.state.FILTER_AVAILABLE:
-                    return (icon) => { return usedicons.hasOwnProperty(icon) === false;};
-                    break;
-                default:
-                    return () => true;
-                    break;
-            }
+        var getFilterFunction = function(){
+            var filter = self.state.filters.filter(function(filter){
+                return self.props.params.filter === filter.filterName;
+            }).pop();
             
-        }(this.props.params.filter);
+            return filter ? filter.filterFunction : (() => true);
+        };
+        
+        var radioButtons = this.state.filters.map(function(filter, i){
+            return (<label key={i}>
+                        {filter.labelText}
+                        <input type="radio" name="icon-filter" checked={self.props.params.filter === filter.filterName} onChange={self.redirectToFilter.bind(self, filter.filterName)}/>
+                    </label>);
+        });
         
         return (
             <div>
                 <p>These are the icons you can choose from, apart from the red ones as they are already taken!</p>
                 <form>
-                    <label>
-                        Show all
-                        <input type="radio" name="icon-filter" defaultChecked checked={this.props.params.filter === this.state.FILTER_ALL} onChange={this.redirectToFilter.bind(this, this.state.FILTER_ALL)}/>
-                    </label>
-                    <label>
-                        Show taken
-                        <input type="radio" name="icon-filter" checked={this.props.params.filter === this.state.FILTER_TAKEN} onChange={this.redirectToFilter.bind(this, this.state.FILTER_TAKEN)}/>
-                    </label>
-                    <label>
-                        Show available
-                        <input type="radio" name="icon-filter" checked={this.props.params.filter === this.state.FILTER_AVAILABLE}  onChange={this.redirectToFilter.bind(this, this.state.FILTER_AVAILABLE)}/>
-                    </label>
+                    {radioButtons}
                 </form>
-                <div className="iconboxes">{this.getIconBoxesHTML(iconFilterFunction)}</div>
+                <div className="iconboxes">{this.getIconBoxesHTML(getFilterFunction())}</div>
             </div>
         );
     }
