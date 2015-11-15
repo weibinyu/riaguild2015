@@ -49,9 +49,9 @@ var Gallery = React.createClass({
             [FILTER_TAKEN]:"Show taken"
         };
         
-        return labels.map(function(labelText, filtername){
+        return _.map(labels, function(labelText, filtername){
             return (
-                <label key={i}>
+                <label key={filtername}>
                     {labelText}
                     <input 
                         type="radio" 
