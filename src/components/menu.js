@@ -39,7 +39,7 @@ var Menu = React.createClass({
                 },
                 {
                     key: 'gallery',
-                    path: '/gallery/',
+                    path: '/gallery/all',
                     linkText: 'Gallery',
                     isIndexLink: false
                 }
@@ -51,8 +51,10 @@ var Menu = React.createClass({
         
     var isActive,
         self = this,
+        pathRoot,
         menuItems = this.props.menuItems.map(function(menuItem){
-            isActive = self.history.isActive(menuItem.path, {}, menuItem.isIndexLink); 
+            pathRoot = (/^(\/{1}(\w+)?)\/?/i).exec(menuItem.path)[0];
+            isActive = self.history.isActive(pathRoot, {}, menuItem.isIndexLink); 
             return React.createElement(MenuItem, _.merge({isActive: isActive}, menuItem))
         });
         
