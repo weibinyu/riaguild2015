@@ -18,18 +18,18 @@ var Gallery = React.createClass({
     mixins: [Navigation],
     
     filters: [
-            {
-                filterName: FILTER_ALL,
-                labelText: 'Show all'
-            },
-            {
-                filterName: FILTER_AVAILABLE,
-                labelText: 'Show available'
-            },
-            {
-                filterName: FILTER_TAKEN,
-                labelText: 'Show taken'
-            }
+        {
+            filterName: FILTER_ALL,
+            labelText: 'Show all'
+        },
+        {
+            filterName: FILTER_AVAILABLE,
+            labelText: 'Show available'
+        },
+        {
+            filterName: FILTER_TAKEN,
+            labelText: 'Show taken'
+        }
     ],
  
     getIconBoxesHTML: function(){
