@@ -57,19 +57,20 @@ var Gallery = React.createClass({
     },
     
     getRenderButtonsHTML: function(){
-        var self = this;
-        
         return filters.map(function(filter, i){
-            return (<label key={i}>
-                        {filter.labelText}
-                        <input type="radio" name="icon-filter" checked={self.props.params.filter === filter.filterName} onChange={self.redirectToFilter.bind(self, filter.filterName)}/>
-                    </label>);
-        });
+            return (
+                <label key={i}>
+                    {filter.labelText}
+                    <input 
+                        type="radio" 
+                        name="icon-filter" 
+                        checked={this.props.params.filter === filter.filterName} 
+                        onChange={this.redirectToFilter.bind(this, filter.filterName)}/>
+                </label>);
+        }, this);
     },
     
     render: function(){
-        var self = this;
-
         return (
             <div>
                 <p>These are the icons you can choose from, apart from the red ones as they are already taken!</p>
