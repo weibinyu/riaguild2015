@@ -17,24 +17,20 @@ var Gallery = React.createClass({
     
     mixins: [Navigation],
     
-    getInitialState:function(){
-        return {
-            filters: [
-                {
-                    filterName: FILTER_ALL,
-                    labelText: 'Show all'
-                },
-                {
-                    filterName: FILTER_AVAILABLE,
-                    labelText: 'Show available'
-                },
-                {
-                    filterName: FILTER_TAKEN,
-                    labelText: 'Show taken'
-                }
-            ]
-        };
-    },
+    filters: [
+            {
+                filterName: FILTER_ALL,
+                labelText: 'Show all'
+            },
+            {
+                filterName: FILTER_AVAILABLE,
+                labelText: 'Show available'
+            },
+            {
+                filterName: FILTER_TAKEN,
+                labelText: 'Show taken'
+            }
+    ],
  
     getIconBoxesHTML: function(){
         
@@ -61,20 +57,25 @@ var Gallery = React.createClass({
         this.props.history.pushState(null, '/gallery/' + filter);
     },
     
-    render: function(){
-        var self = this,
-            radioButtons = this.state.filters.map(function(filter, i){
+    getRenderButtonsHTML: function(){
+        var self = this;
+        
+        return this.filters.map(function(filter, i){
             return (<label key={i}>
                         {filter.labelText}
                         <input type="radio" name="icon-filter" checked={self.props.params.filter === filter.filterName} onChange={self.redirectToFilter.bind(self, filter.filterName)}/>
                     </label>);
         });
-        
+    },
+    
+    render: function(){
+        var self = this;
+
         return (
             <div>
                 <p>These are the icons you can choose from, apart from the red ones as they are already taken!</p>
                 <form>
-                    {radioButtons}
+                    {this.getRenderButtonsHTML()}
                 </form>
                 <div className="iconboxes">{this.getIconBoxesHTML()}</div>
             </div>
