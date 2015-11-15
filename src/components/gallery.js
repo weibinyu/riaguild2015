@@ -23,7 +23,6 @@ var React = require("react"),
         }
     ];
 
-
 var Gallery = React.createClass({
     
     mixins: [Navigation],
