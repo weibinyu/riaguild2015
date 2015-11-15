@@ -7,7 +7,11 @@ var React = require("react"),
     Navigation = require('react-router').Navigation,
     usedicons = _.reduce(members,function(ret,data,id){
         return Object.assign(ret,{[data.icon]:data.id});
-    },{});
+    },{}),
+    FILTER_ALL = 'all',
+    FILTER_TAKEN = 'taken',
+    FILTER_AVAILABLE = 'available';
+
 
 var Gallery = React.createClass({
     
@@ -17,19 +21,16 @@ var Gallery = React.createClass({
         return {
             filters: [
                 {
-                    filterName: 'all',
-                    labelText: 'Show all',
-                    filterFunction: () => true,
+                    filterName: FILTER_ALL,
+                    labelText: 'Show all'
                 },
                 {
-                    filterName: 'available',
-                    labelText: 'Show available',
-                    filterFunction: (icon) => { return usedicons.hasOwnProperty(icon) === false;}
+                    filterName: FILTER_AVAILABLE,
+                    labelText: 'Show available'
                 },
                 {
-                    filterName: 'taken',
-                    labelText: 'Show taken',
-                    filterFunction: (icon) => { return usedicons.hasOwnProperty(icon);}
+                    filterName: FILTER_TAKEN,
+                    labelText: 'Show taken'
                 }
             ]
         };
@@ -37,8 +38,13 @@ var Gallery = React.createClass({
  
     getIconBoxesHTML: function(){
         
-        return icons.filter(this.getFilterFunction()).map(function(icon,n){
-
+        var filterFunction = {
+                [FILTER_AVAILABLE]: (icon) => { return usedicons.hasOwnProperty(icon) === false;},
+                [FILTER_TAKEN]: (icon) => { return usedicons.hasOwnProperty(icon);}
+            }[this.props.params.filter] || (() => true);
+        
+        return icons.filter(filterFunction).map(function(icon,n){
+            
             return (
                 <span key={n} className={usedicons[icon]?"icon chosen":"icon"}>
                     {
@@ -49,15 +55,6 @@ var Gallery = React.createClass({
                 </span>
             ); 
         });
-    },
-    
-    getFilterFunction: function(){
-        var self = this,
-            filter = this.state.filters.filter(function(filter){
-                return self.props.params.filter === filter.filterName;
-            }).pop();
-
-        return filter ? filter.filterFunction : (() => true);
     },
     
     redirectToFilter: function(filter){
