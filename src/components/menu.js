@@ -39,7 +39,7 @@ var Menu = React.createClass({
                 },
                 {
                     key: 'gallery',
-                    path: '/gallery/',
+                    path: '/gallery/all',
                     linkText: 'Gallery',
                     isIndexLink: false
                 }
