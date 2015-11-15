@@ -19,8 +19,8 @@ var Gallery = React.createClass({
     getIconBoxesHTML: function(){
         
         var filterFunction = {
-                [FILTER_AVAILABLE]: (icon) => { return usedicons.hasOwnProperty(icon) === false;},
-                [FILTER_TAKEN]: (icon) => { return usedicons.hasOwnProperty(icon);}
+                [FILTER_AVAILABLE]: (icon) => usedicons.hasOwnProperty(icon) === false,
+                [FILTER_TAKEN]: (icon) => usedicons.hasOwnProperty(icon)
             }[this.props.params.filter] || (() => true);
         
         return icons.filter(filterFunction).map(function(icon,n){
