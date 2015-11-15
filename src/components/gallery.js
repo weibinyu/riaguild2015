@@ -35,9 +35,9 @@ var Gallery = React.createClass({
         };
     },
  
-    getIconBoxesHTML: function(iconFilterFunction){
+    getIconBoxesHTML: function(){
         
-        return icons.filter(iconFilterFunction).map(function(icon,n){
+        return icons.filter(this.getFilterFunction()).map(function(icon,n){
 
             return (
                 <span key={n} className={usedicons[icon]?"icon chosen":"icon"}>
@@ -51,22 +51,22 @@ var Gallery = React.createClass({
         });
     },
     
+    getFilterFunction: function(){
+        var self = this,
+            filter = this.state.filters.filter(function(filter){
+                return self.props.params.filter === filter.filterName;
+            }).pop();
+
+        return filter ? filter.filterFunction : (() => true);
+    },
+    
     redirectToFilter: function(filter){
         this.props.history.pushState(null, '/gallery/' + filter);
     },
     
     render: function(){
-        var self = this;
-        
-        var getFilterFunction = function(){
-            var filter = self.state.filters.filter(function(filter){
-                return self.props.params.filter === filter.filterName;
-            }).pop();
-            
-            return filter ? filter.filterFunction : (() => true);
-        };
-        
-        var radioButtons = this.state.filters.map(function(filter, i){
+        var self = this,
+            radioButtons = this.state.filters.map(function(filter, i){
             return (<label key={i}>
                         {filter.labelText}
                         <input type="radio" name="icon-filter" checked={self.props.params.filter === filter.filterName} onChange={self.redirectToFilter.bind(self, filter.filterName)}/>
@@ -79,7 +79,7 @@ var Gallery = React.createClass({
                 <form>
                     {radioButtons}
                 </form>
-                <div className="iconboxes">{this.getIconBoxesHTML(getFilterFunction())}</div>
+                <div className="iconboxes">{this.getIconBoxesHTML()}</div>
             </div>
         );
     }
