@@ -15,17 +15,12 @@ var Gallery = React.createClass({
     
     getInitialState:function(){
         return {
-            iconFilterFunction: () => true,
             FILTER_AVAILABLE: 'available',
             FILTER_TAKEN: 'taken',
             FILTER_ALL: 'all'
         };
     },
-    
-    setIconFilter: function(iconFilter){
-        this.setState({iconFilter: iconFilter});
-    },
-        
+ 
     getIconBoxesHTML: function(iconFilterFunction){
         
         return icons.filter(iconFilterFunction).map(function(icon,n){
@@ -70,15 +65,15 @@ var Gallery = React.createClass({
                 <form>
                     <label>
                         Show all
-                        <input type="radio" name="icon-filter" defaultChecked checked={this.props.params.filter === this.state.FILTER_ALL} onChange={this.setIconFilter.bind(this, this.state.FILTER_ALL)} onClick={this.redirectToFilter.bind(this, this.state.FILTER_ALL)}/>
+                        <input type="radio" name="icon-filter" defaultChecked checked={this.props.params.filter === this.state.FILTER_ALL} onChange={this.redirectToFilter.bind(this, this.state.FILTER_ALL)}/>
                     </label>
                     <label>
                         Show taken
-                        <input type="radio" name="icon-filter" checked={this.props.params.filter === this.state.FILTER_TAKEN} onChange={this.setIconFilter.bind(this, this.state.FILTER_TAKEN)} onClick={this.redirectToFilter.bind(this, this.state.FILTER_TAKEN)}/>
+                        <input type="radio" name="icon-filter" checked={this.props.params.filter === this.state.FILTER_TAKEN} onChange={this.redirectToFilter.bind(this, this.state.FILTER_TAKEN)}/>
                     </label>
                     <label>
                         Show available
-                        <input type="radio" name="icon-filter" checked={this.props.params.filter === this.state.FILTER_AVAILABLE} onChange={this.setIconFilter.bind(this, this.state.FILTER_AVAILABLE)} onClick={this.redirectToFilter.bind(this, this.state.FILTER_AVAILABLE)}/>
+                        <input type="radio" name="icon-filter" checked={this.props.params.filter === this.state.FILTER_AVAILABLE}  onChange={this.redirectToFilter.bind(this, this.state.FILTER_AVAILABLE)}/>
                     </label>
                 </form>
                 <div className="iconboxes">{this.getIconBoxesHTML(iconFilterFunction)}</div>
