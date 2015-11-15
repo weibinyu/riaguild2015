@@ -10,14 +10,8 @@ var React = require("react"),
     },{}),
     FILTER_ALL = 'all',
     FILTER_TAKEN = 'taken',
-    FILTER_AVAILABLE = 'available';
-
-
-var Gallery = React.createClass({
-    
-    mixins: [Navigation],
-    
-    filters: [
+    FILTER_AVAILABLE = 'available',
+    filters = [
         {
             filterName: FILTER_ALL,
             labelText: 'Show all'
@@ -30,7 +24,12 @@ var Gallery = React.createClass({
             filterName: FILTER_TAKEN,
             labelText: 'Show taken'
         }
-    ],
+    ];
+
+
+var Gallery = React.createClass({
+    
+    mixins: [Navigation],
  
     getIconBoxesHTML: function(){
         
@@ -40,7 +39,7 @@ var Gallery = React.createClass({
             }[this.props.params.filter] || (() => true);
         
         return icons.filter(filterFunction).map(function(icon,n){
-            
+                
             return (
                 <span key={n} className={usedicons[icon]?"icon chosen":"icon"}>
                     {
@@ -60,7 +59,7 @@ var Gallery = React.createClass({
     getRenderButtonsHTML: function(){
         var self = this;
         
-        return this.filters.map(function(filter, i){
+        return filters.map(function(filter, i){
             return (<label key={i}>
                         {filter.labelText}
                         <input type="radio" name="icon-filter" checked={self.props.params.filter === filter.filterName} onChange={self.redirectToFilter.bind(self, filter.filterName)}/>
