@@ -8,9 +8,6 @@ var React = require("react"),
     usedicons = _.reduce(members,function(ret,data,id){
         return Object.assign(ret,{[data.icon]:data.id});
     },{}),
-    FILTER_ALL = 'all',
-    FILTER_TAKEN = 'taken',
-    FILTER_AVAILABLE = 'available',
     filters = [
         {
             filterName: FILTER_ALL,
@@ -34,8 +31,8 @@ var Gallery = React.createClass({
     getIconBoxesHTML: function(){
         
         var filterFunction = {
-                [FILTER_AVAILABLE]: (icon) => { return usedicons.hasOwnProperty(icon) === false;},
-                [FILTER_TAKEN]: (icon) => { return usedicons.hasOwnProperty(icon);}
+                available: (icon) => { return usedicons.hasOwnProperty(icon) === false;},
+                taken: (icon) => { return usedicons.hasOwnProperty(icon);}
             }[this.props.params.filter] || (() => true);
         
         return icons.filter(filterFunction).map(function(icon,n){
