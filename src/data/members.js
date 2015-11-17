@@ -67,7 +67,8 @@ var sageadvice = [
 	["mw222rs",1], // Mattias W, ESLint
 	["swoot1",1], // Elin, build script
 	["swoot1",2], // Elin, ES6
-	["mw222rs",2] // Mattias W, Sublime
+	["mw222rs",2], // Mattias W, Sublime
+	["swoot1",7], // Elin, state vs props vs static
 ]; // David's divine opinion :P
 
 members = _.mapValues(members,function(data){
@@ -108,6 +109,7 @@ var actions = _.reduce(members,function(ret,data,id){
 
 var heroes = _.reduce(members,function(ret,user){
 	return _.mapValues(ret,function(current,aspect){
+		user[aspect] = user[aspect] || [];
 		if (user[aspect].length > current[0]){
 			return [user[aspect].length,[user.id]];
 		} else if (user[aspect].length === current[0]){
@@ -116,7 +118,7 @@ var heroes = _.reduce(members,function(ret,user){
 			return current;
 		}
 	});
-},{blogposts:[0,[]],pullrequests:[0,[]],sageadvice:[0,[]]});
+},{blogposts:[0,[]],pullrequests:[0,[]],sageadvice:[0,[]],snippets:[0,[]]});
 
 //console.log("MEMBERS",members);
 

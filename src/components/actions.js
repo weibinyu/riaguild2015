@@ -60,7 +60,7 @@ var Actions = React.createClass({
 		});
 		return (
 			<div>
-				<p>There's been {mem.numberofposts} posts and {mem.numberofprs} pull requests so far:</p>
+				<p>There's been {mem.numberofposts} posts, {mem.numberofprs} pull requests and {mem.numberofsnippets} code snippets so far:</p>
 				<table className="table table-striped">
 					<thead>
 						<tr><th>Who</th><th>When</th><th>What</th><th>Target (if PR)</th></tr>
