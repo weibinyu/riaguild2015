@@ -63,7 +63,7 @@ var Member = React.createClass({
 						<h3>Code snippets</h3>
 						<ul>{snippets}</ul>
 					</div>
-				)}
+				) || ""}
 				{pullrequests.length && (
 					<div>
 						<h3>Pull requests</h3>
